@@ -5,6 +5,8 @@
 ## Настройка
 
 ```less
+// Control
+
 @form-control-color: @base-primary;
 
 @form-control-border-width: 1px;
@@ -41,11 +43,30 @@
 @form-control-danger-focus-border-color: @form-control-danger-hover-border-color;
 @form-control-danger-focus-background-color: @form-control-danger-hover-background-color;
 
+// Accent
+
+@form-accent-color: @light-primary;
+
+@form-accent-border-color: @base-secondary;
+
+@form-accent-background-color: @form-accent-border-color;
+@form-accent-background-image: none;
+@form-accent-background-repeat: repeat;
+@form-accent-background-position: 0 0;
+@form-accent-background-size: auto auto;
+
+@form-accent-hover-border-color: @form-accent-border-color;
+@form-accent-hover-background-color: lighten(@form-accent-background-color, 20%);
+
+// Hint
+
 @form-hint-color: @base-hint;
 @form-hint-danger-color: @alert-danger;
 
 @form-hint-font-size: @font-size-smaller;
 @form-hint-line-height: @line-height-smaller;
+
+// Breakpoints
 
 @form-breakpoints: @grid-breakpoints-md;
 ```
