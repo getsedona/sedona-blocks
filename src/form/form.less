@@ -1,6 +1,8 @@
 // Form
 //------------------------------------------------------------------------------
 
+// Control
+
 @form-control-color: @base-primary;
 
 @form-control-border-width: 1px;
@@ -37,11 +39,30 @@
 @form-control-danger-focus-border-color: @form-control-danger-hover-border-color;
 @form-control-danger-focus-background-color: @form-control-danger-hover-background-color;
 
+// Accent
+
+@form-accent-color: @light-primary;
+
+@form-accent-border-color: @base-secondary;
+
+@form-accent-background-color: @form-accent-border-color;
+@form-accent-background-image: none;
+@form-accent-background-repeat: repeat;
+@form-accent-background-position: 0 0;
+@form-accent-background-size: auto auto;
+
+@form-accent-hover-border-color: @form-accent-border-color;
+@form-accent-hover-background-color: lighten(@form-accent-background-color, 20%);
+
+// Hint
+
 @form-hint-color: @base-hint;
 @form-hint-danger-color: @alert-danger;
 
 @form-hint-font-size: @font-size-smaller;
 @form-hint-line-height: @line-height-smaller;
+
+// Breakpoints
 
 @form-breakpoints: @grid-breakpoints-md;
 
@@ -56,33 +77,39 @@
 .form__group {
 	padding-bottom: @indent;
 
-	@media (min-width: @form-breakpoints) {
-		display: flex;
-		flex-wrap: nowrap;
+	&--columns {
+		@media (min-width: @form-breakpoints) {
+			display: flex;
+			flex-wrap: nowrap;
+		}
 	}
 }
 
 .form__label {
 	margin-bottom: (@indent / 2);
 
-	@media (max-width: (@form-breakpoints - 1px)) {
-		width: 100% !important;
-	}
+	.form__group--columns & {
+		@media (max-width: (@form-breakpoints - 1px)) {
+			width: 100% !important;
+		}
 
-	@media (min-width: @form-breakpoints) {
-		padding-right: (@grid-gutter / 2);
-		margin-top: @form-control-padding-top;
-		margin-bottom: 0;
+		@media (min-width: @form-breakpoints) {
+			padding-right: (@grid-gutter / 2);
+			margin-top: @form-control-padding-top;
+			margin-bottom: 0;
+		}
 	}
 }
 
 .form__fields {
-	@media (min-width: @form-breakpoints) {
-		flex: 1 0 0%;
-	}
+	.form__group--columns & {
+		@media (min-width: @form-breakpoints) {
+			flex: 1 0 0%;
+		}
 
-	@media (max-width: (@form-breakpoints - 1px)) {
-		margin-left: 0 !important;
+		@media (max-width: (@form-breakpoints - 1px)) {
+			margin-left: 0 !important;
+		}
 	}
 }
 
@@ -158,6 +185,15 @@
 		}
 	}
 
+	input[type="number"] {
+		appearance: textfield;
+
+		&::-webkit-outer-spin-button,
+		&::-webkit-inner-spin-button {
+			appearance: none;
+		}
+	}
+
 	select {
 		@icon: escape("<svg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' fill='@{form-hint-color}'><path d='M7.41 7.84L12 12.42l4.59-4.58L18 9.25l-6 6-6-6z'/></svg>");
 
@@ -205,17 +241,31 @@
 	}
 }
 
-.form__checkbox,
-.form__radio {
-	.form__fields .form__line:first-child .form__control:first-child & {
+.form__content {
+	.form__group--columns .form__line:first-child &:first-child {
 		@media (min-width: @form-breakpoints) {
 			margin-top: @form-control-padding-top;
 		}
 	}
 
-	.form__fields .form__line:last-child .form__control:last-child & {
+	.form__group--columns .form__line:last-child &:last-child {
 		@media (min-width: @form-breakpoints) {
-			margin-bottom: @form-control-padding-top;
+			padding-bottom: @form-control-padding-top;
+		}
+	}
+}
+
+.form__checkbox,
+.form__radio {
+	.form__group--columns .form__line:first-child .form__control:first-child & {
+		@media (min-width: @form-breakpoints) {
+			margin-top: @form-control-padding-top;
+		}
+	}
+
+	.form__group--columns .form__line:last-child .form__control:last-child & {
+		@media (min-width: @form-breakpoints) {
+			padding-bottom: @form-control-padding-top;
 		}
 	}
 
@@ -244,12 +294,12 @@
 			content: "";
 			width: (@font-size * 1.375);
 			height: (@font-size * 1.375);
-			border-width: @form-control-border-width;
-			border-style: solid;
-			border-color: @form-control-border-color;
 		}
 
 		&::before {
+			border-width: @form-control-border-width;
+			border-style: solid;
+			border-color: @form-control-border-color;
 			background-color: @form-control-background-color;
 			background-image: @form-control-background-image;
 			background-repeat: @form-control-background-repeat;
@@ -260,8 +310,6 @@
 		}
 
 		&::after {
-			border: 0;
-			border-radius: 0;
 			background-repeat: no-repeat;
 			background-position: 50% 50%;
 			background-size: 18px 18px;
@@ -278,7 +326,7 @@
 		}
 
 		&::after {
-			@icon: escape("<svg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' fill='@{form-control-color}'><path d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/></svg>");
+			@icon: escape("<svg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' fill='@{form-accent-color}'><path d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/></svg>");
 
 			background-image: url("data:image/svg+xml, @{icon}");
 		}
@@ -290,7 +338,7 @@
 		}
 
 		&::after {
-			@icon: escape("<svg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' fill='@{form-control-color}'><circle cx='12' cy='12' r='4'/></svg>");
+			@icon: escape("<svg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' fill='@{form-accent-color}'><circle cx='12' cy='12' r='4'/></svg>");
 
 			background-image: url("data:image/svg+xml, @{icon}");
 		}
@@ -313,14 +361,162 @@
 	}
 
 	input:checked + span {
+		&::before {
+			background-color: @form-accent-background-color !important;
+			background-image: @form-accent-background-image !important;
+			background-repeat: @form-accent-background-repeat !important;
+			background-position: @form-accent-background-position !important;
+			background-size: @form-accent-background-size !important;
+			border-color: @form-accent-border-color !important;
+		}
+
 		&::after {
 			opacity: 1;
 			transform: scale3d(1, 1, 1);
 		}
 	}
 
+	input:checked:focus + span::before,
+	&:hover input:not([disabled]):checked + span::before,
+	input:not([disabled]):checked:focus + span::before {
+		border-color: @form-accent-hover-border-color !important;
+		background-color: @form-accent-hover-background-color !important;
+	}
+
 	input[disabled] + span {
 		.disabled();
+	}
+
+	.form__control--danger & {
+		input + span::before {
+			border-color: @form-control-danger-border-color;
+			background-color: @form-control-danger-background-color;
+		}
+
+		input:focus + span::before {
+			.focus(@form-control-danger-focus-outline-color);
+			border-color: @form-control-danger-focus-border-color;
+			background-color: @form-control-danger-focus-background-color;
+		}
+
+		&:hover input:not([disabled]) + span::before,
+		input:not([disabled]):focus + span::before {
+			border-color: @form-control-danger-hover-border-color;
+		 	background-color: @form-control-danger-hover-background-color;
+		}
+	}
+}
+
+.form__toggle {
+	display: flex;
+	width: 100%;
+	flex-wrap: wrap;
+	padding-bottom: 1px;
+	border-radius: @form-control-border-radius;
+	transition-property: box-shadow;
+	transition: @duration @timing-function;
+
+	@media (min-width: @form-breakpoints) {
+	 	flex-wrap: nowrap;
+	 	padding-bottom: 0;
+	 	padding-left: 1px;
+	}
+
+	&:focus-within {
+		.focus(@form-control-focus-outline-color);
+	}
+
+	label {
+	 	width: 100%;
+	 	margin-bottom: -1px;
+
+		@media (min-width: @form-breakpoints) {
+	 		margin-bottom: 0;
+	 		margin-left: -1px;
+	 		width: auto;
+	 		flex-grow: 1;
+	 	}
+	}
+
+	input {
+		position: absolute;
+		width: 1px;
+		height: 1px;
+		margin: -1px;
+		padding: 0;
+		border: 0;
+		overflow: hidden;
+		clip: rect(0 0 0 0);
+		white-space: nowrap;
+	}
+
+	input + span {
+		display: block;
+		border-width: @form-control-border-width;
+		border-style: solid;
+		border-color: @form-control-border-color;
+		padding-top: (@form-control-padding-top - @form-control-border-width);
+		padding-right: (@form-control-padding-right - @form-control-border-width);
+		padding-bottom: (@form-control-padding-bottom - @form-control-border-width);
+		padding-left: (@form-control-padding-left - @form-control-border-width);
+		min-height: @form-control-height;
+		color: @form-control-color;
+		background-color: @form-control-background-color;
+		background-image: @form-control-background-image;
+		background-repeat: @form-control-background-repeat;
+		background-position: @form-control-background-position;
+		background-size: @form-control-background-size;
+	 	white-space: nowrap;
+	 	text-align: center;
+		z-index: 2;
+		position: relative;
+		transition-property: color, background-color, border-color;
+		transition: @duration @timing-function;
+	}
+
+	body:not(.no-focus) &:focus-within input + span,
+	label:hover input:not([disabled]) + span,
+	input:not([disabled]):focus + span {
+		border-color: @form-control-hover-border-color;
+		cursor: pointer;
+		z-index: 3;
+	}
+
+	input:not(:checked):not([disabled]) + span:active {
+		top: 1px;
+	}
+
+	input:checked + span {
+		background-color: @form-accent-background-color;
+		background-image: @form-accent-background-image;
+		background-repeat: @form-accent-background-repeat;
+		background-position: @form-accent-background-position;
+		background-size: @form-accent-background-size;
+		color: @form-accent-color;
+		border-color: @form-accent-border-color !important;
+		cursor: default !important;
+		z-index: 4 !important;
+	}
+
+	input[disabled] + span {
+		.disabled();
+		z-index: 1;
+	}
+
+	label:first-of-type span {
+		border-radius: @form-control-border-radius @form-control-border-radius 0 0;
+
+		@media (min-width: @form-breakpoints) {
+			border-radius: @form-control-border-radius 0 0 @form-control-border-radius;
+		}
+	}
+
+	label:last-of-type span {
+		border-radius: 0 0 @form-control-border-radius @form-control-border-radius;
+
+		@media (min-width: @form-breakpoints) {
+			border-radius: 0 @form-control-border-radius @form-control-border-radius 0;
+		}
 	}
 }
 
@@ -335,13 +531,37 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	padding: @form-control-padding-top @form-control-padding-top @form-control-padding-bottom;
+	border-radius: @form-control-border-radius;
+	padding-top: (@form-control-padding-top - @form-control-border-width);
+	padding-right: (@form-control-padding-top - @form-control-border-width);
+	padding-bottom: (@form-control-padding-bottom - @form-control-border-width);
+	padding-left: (@form-control-padding-top - @form-control-border-width);
+	border-width: @form-control-border-width;
+	border-style: solid;
+	border-color: fade(@form-control-border-color, 0);
+	background-color: transparent;
+	transition: @duration @timing-function;
+	transition-property: box-shadow, border-color, color, fill;
+
+	button& {
+		&:focus {
+			.focus(@form-control-focus-outline-color);
+
+			body:not(.no-focus) & {
+				border-color: @form-control-focus-border-color;
+			}
+		}
+
+		&:active {
+			top: 1px;
+		}
+	}
 }
 
 .form__before {
 	left: 0;
 
-	& + input {
+	& ~ input {
 		padding-left: (@form-control-height - @form-control-border-width);
 	}
 }
@@ -350,7 +570,7 @@
 	order: 1;
 	right: (@grid-gutter / 4);
 
-	& + input {
+	& ~ input {
 		padding-right: (@form-control-height - @form-control-border-width);
 	}
 }
