@@ -21,7 +21,7 @@
 @range-line-background-position: 0 0;
 @range-line-background-size: auto auto;
 
-@range-bar-background-color: @form-control-hover-border-color;
+@range-bar-background-color: @form-accent-border-color;
 @range-bar-background-image: none;
 @range-bar-background-repeat: repeat;
 @range-bar-background-position: 0 0;
