@@ -5,12 +5,9 @@
 ## Настройка
 
 ```less
-// Control
-
-@form-control-color: @base-primary;
+// Proportions
 
 @form-control-border-width: 1px;
-@form-control-border-color: @base-divider;
 @form-control-border-radius: @radius;
 
 @form-control-padding-top: 6px;
@@ -19,6 +16,16 @@
 @form-control-padding-right: @form-control-padding-left;
 
 @form-control-height: (@line-height + @form-control-padding-top + @form-control-padding-bottom);
+
+// Breakpoints
+
+@form-breakpoints: @grid-breakpoints-md;
+
+// Control
+
+@form-control-color: @base-primary;
+
+@form-control-border-color: @base-divider;
 
 @form-control-background-color: @light-primary;
 @form-control-background-image: none;
@@ -60,15 +67,133 @@
 
 // Hint
 
-@form-hint-color: @base-hint;
-@form-hint-danger-color: @alert-danger;
-
 @form-hint-font-size: @font-size-smaller;
 @form-hint-line-height: @line-height-smaller;
 
-// Breakpoints
+@form-hint-color: @base-hint;
+@form-hint-danger-color: @alert-danger;
 
-@form-breakpoints: @grid-breakpoints-md;
+// Placeholder
+
+@form-placeholder-color: @form-hint-color;
+
+// Element
+
+@form-element-color: @form-placeholder-color;
+
+// Darken control
+
+@form-darken-control-color: @light-primary;
+
+@form-darken-control-border-color: @light-divider;
+
+@form-darken-control-background-color: @dark-primary;
+@form-darken-control-background-image: none;
+@form-darken-control-background-repeat: repeat;
+@form-darken-control-background-position: 0 0;
+@form-darken-control-background-size: auto auto;
+
+@form-darken-control-hover-border-color: lighten(@form-darken-control-border-color, 15%);
+@form-darken-control-hover-background-color: @form-darken-control-background-color;
+
+@form-darken-control-focus-outline-color: @form-darken-control-border-color;
+@form-darken-control-focus-border-color: @form-darken-control-hover-border-color;
+@form-darken-control-focus-background-color: @form-darken-control-hover-background-color;
+
+@form-darken-control-danger-border-color: lighten(@alert-danger, 5%);
+@form-darken-control-danger-background-color: @form-darken-control-background-color;
+
+@form-darken-control-danger-hover-border-color: darken(@form-darken-control-danger-border-color, 5%);
+@form-darken-control-danger-hover-background-color: @form-darken-control-danger-background-color;
+
+@form-darken-control-danger-focus-outline-color: @form-darken-control-danger-border-color;
+@form-darken-control-danger-focus-border-color: @form-darken-control-danger-hover-border-color;
+@form-darken-control-danger-focus-background-color: @form-darken-control-danger-hover-background-color;
+
+// Darken accent
+
+@form-darken-accent-color: @dark-primary;
+
+@form-darken-accent-border-color: @light-secondary;
+
+@form-darken-accent-background-color: @form-darken-accent-border-color;
+@form-darken-accent-background-image: none;
+@form-darken-accent-background-repeat: repeat;
+@form-darken-accent-background-position: 0 0;
+@form-darken-accent-background-size: auto auto;
+
+@form-darken-accent-hover-border-color: @form-darken-accent-border-color;
+@form-darken-accent-hover-background-color: darken(@form-darken-accent-background-color, 20%);
+
+// Darken hint
+
+@form-darken-hint-color: @light-hint;
+@form-darken-hint-danger-color: @alert-danger;
+
+// Darken placeholder
+
+@form-darken-placeholder-color: @form-darken-hint-color;
+
+// Darken element
+
+@form-darken-element-color: @form-darken-placeholder-color;
+
+// Lighten control
+
+@form-lighten-control-color: @dark-primary;
+
+@form-lighten-control-border-color: @dark-divider;
+
+@form-lighten-control-background-color: @light-primary;
+@form-lighten-control-background-image: none;
+@form-lighten-control-background-repeat: repeat;
+@form-lighten-control-background-position: 0 0;
+@form-lighten-control-background-size: auto auto;
+
+@form-lighten-control-hover-border-color: darken(@form-lighten-control-border-color, 15%);
+@form-lighten-control-hover-background-color: @form-lighten-control-background-color;
+
+@form-lighten-control-focus-outline-color: @form-lighten-control-border-color;
+@form-lighten-control-focus-border-color: @form-lighten-control-hover-border-color;
+@form-lighten-control-focus-background-color: @form-lighten-control-hover-background-color;
+
+@form-lighten-control-danger-border-color: lighten(@alert-danger, 25%);
+@form-lighten-control-danger-background-color: @form-lighten-control-background-color;
+
+@form-lighten-control-danger-hover-border-color: darken(@form-lighten-control-danger-border-color, 10%);
+@form-lighten-control-danger-hover-background-color: @form-lighten-control-danger-background-color;
+
+@form-lighten-control-danger-focus-outline-color: @form-lighten-control-danger-border-color;
+@form-lighten-control-danger-focus-border-color: @form-lighten-control-danger-hover-border-color;
+@form-lighten-control-danger-focus-background-color: @form-lighten-control-danger-hover-background-color;
+
+// Lighten accent
+
+@form-lighten-accent-color: @light-primary;
+
+@form-lighten-accent-border-color: @dark-secondary;
+
+@form-lighten-accent-background-color: @form-lighten-accent-border-color;
+@form-lighten-accent-background-image: none;
+@form-lighten-accent-background-repeat: repeat;
+@form-lighten-accent-background-position: 0 0;
+@form-lighten-accent-background-size: auto auto;
+
+@form-lighten-accent-hover-border-color: @form-lighten-accent-border-color;
+@form-lighten-accent-hover-background-color: lighten(@form-lighten-accent-background-color, 20%);
+
+// Lighten hint
+
+@form-lighten-hint-color: @dark-hint;
+@form-lighten-hint-danger-color: @alert-danger;
+
+// Lighten placeholder
+
+@form-lighten-placeholder-color: @form-lighten-hint-color;
+
+// Lighten element
+
+@form-lighten-element-color: @form-lighten-placeholder-color;
 ```
 
 ## Дополнительно
