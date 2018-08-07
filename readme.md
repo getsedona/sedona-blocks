@@ -6,6 +6,10 @@
 
 ## Типы
 
+### Глобальные
+
+* [global](https://github.com/constlab/sedona-blocks/tree/master/src/global)
+
 ### Системные
 
 Основа без которой не обойтись.
@@ -60,6 +64,7 @@ npm i sedona-blocks
 ```js
 …
 main: [
+  'node_modules/sedona-blocks/src/global/global.less',
   'node_modules/sedona-blocks/src/scene/scene.less',
   'node_modules/sedona-blocks/src/wysiwyg/wysiwyg.less',
   'node_modules/sedona-blocks/src/footer/footer.less',
@@ -77,24 +82,13 @@ main: [
 ]
 …
 app: [
-  'src/js/app.js',
+  'node_modules/sedona-blocks/src/global/global.js',
   'node_modules/sedona-blocks/src/header/header.js',
   'node_modules/sedona-blocks/src/slider/slider.js',
   'node_modules/sedona-blocks/src/file/file.js',
   'node_modules/sedona-blocks/src/range/range.js',
-  'node_modules/sedona-blocks/src/table/table.js'
+  'node_modules/sedona-blocks/src/table/table.js',
+  'src/js/app.js'
 ]
-…
-```
-
-## Настройка
-
-Некоторые блоки имеют свой набор переменных. Их можно переопределить, добавив в конец файла [variables.less](https://github.com/constlab/sedona-basis/blob/master/src/less/variables.less):
-
-```less
-…
-@footer-font-size: @font-size-smaller;
-@footer-line-height: @line-height-smaller;
-@footer-color: @dark-secondary;
 …
 ```
