@@ -62,8 +62,8 @@
 @form-accent-background-position: 0 0;
 @form-accent-background-size: auto auto;
 
-@form-accent-hover-border-color: @form-accent-border-color;
-@form-accent-hover-background-color: lighten(@form-accent-background-color, 20%);
+@form-accent-hover-border-color: darken(@form-accent-border-color, 10%);
+@form-accent-hover-background-color: darken(@form-accent-background-color, 10%);
 
 // Hint
 
@@ -122,8 +122,8 @@
 @form-darken-accent-background-position: 0 0;
 @form-darken-accent-background-size: auto auto;
 
-@form-darken-accent-hover-border-color: @form-darken-accent-border-color;
-@form-darken-accent-hover-background-color: darken(@form-darken-accent-background-color, 20%);
+@form-darken-accent-hover-border-color: lighten(@form-darken-accent-border-color, 20%);
+@form-darken-accent-hover-background-color: lighten(@form-darken-accent-background-color, 20%);
 
 // Darken hint
 
@@ -179,8 +179,8 @@
 @form-lighten-accent-background-position: 0 0;
 @form-lighten-accent-background-size: auto auto;
 
-@form-lighten-accent-hover-border-color: @form-lighten-accent-border-color;
-@form-lighten-accent-hover-background-color: lighten(@form-lighten-accent-background-color, 20%);
+@form-lighten-accent-hover-border-color: darken(@form-lighten-accent-border-color, 10%);
+@form-lighten-accent-hover-background-color: darken(@form-lighten-accent-background-color, 10%);
 
 // Lighten hint
 
@@ -200,3 +200,4 @@
 
 * Маски: [Inputmask](https://github.com/RobinHerbots/Inputmask)
 * Календарь: [air-datepicker](https://github.com/t1m0n/air-datepicker)
+* Автоподстройка по высоте текстареи: [autosize](https://github.com/jackmoore/autosize)
