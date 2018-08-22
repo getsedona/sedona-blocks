@@ -58,8 +58,8 @@
 @form-accent-background-position: 0 0;
 @form-accent-background-size: auto auto;
 
-@form-accent-hover-border-color: @form-accent-border-color;
-@form-accent-hover-background-color: lighten(@form-accent-background-color, 20%);
+@form-accent-hover-border-color: darken(@form-accent-border-color, 10%);
+@form-accent-hover-background-color: darken(@form-accent-background-color, 10%);
 
 // Hint
 
@@ -118,8 +118,8 @@
 @form-darken-accent-background-position: 0 0;
 @form-darken-accent-background-size: auto auto;
 
-@form-darken-accent-hover-border-color: @form-darken-accent-border-color;
-@form-darken-accent-hover-background-color: darken(@form-darken-accent-background-color, 20%);
+@form-darken-accent-hover-border-color: lighten(@form-darken-accent-border-color, 20%);
+@form-darken-accent-hover-background-color: lighten(@form-darken-accent-background-color, 20%);
 
 // Darken hint
 
@@ -175,8 +175,8 @@
 @form-lighten-accent-background-position: 0 0;
 @form-lighten-accent-background-size: auto auto;
 
-@form-lighten-accent-hover-border-color: @form-lighten-accent-border-color;
-@form-lighten-accent-hover-background-color: lighten(@form-lighten-accent-background-color, 20%);
+@form-lighten-accent-hover-border-color: darken(@form-lighten-accent-border-color, 10%);
+@form-lighten-accent-hover-background-color: darken(@form-lighten-accent-background-color, 10%);
 
 // Lighten hint
 
@@ -351,6 +351,29 @@
 		}
 	}
 
+	input {
+		&::-ms-clear,
+		&::-ms-reveal {
+			display: none;
+		}
+
+		&::-webkit-search-decoration,
+		&::-webkit-search-cancel-button,
+		&::-webkit-search-results-button,
+		&::-webkit-search-results-decoration {
+			display: none;
+		}
+	}
+
+	input[type="number"] {
+		appearance: textfield;
+
+		&::-webkit-outer-spin-button,
+		&::-webkit-inner-spin-button {
+			appearance: none;
+		}
+	}
+
 	input,
 	textarea {
 		&::placeholder {
@@ -369,15 +392,6 @@
 	.form--lighten & textarea {
 		&::placeholder {
 			color: @form-lighten-placeholder-color;
-		}
-	}
-
-	input[type="number"] {
-		appearance: textfield;
-
-		&::-webkit-outer-spin-button,
-		&::-webkit-inner-spin-button {
-			appearance: none;
 		}
 	}
 
@@ -478,18 +492,50 @@
 	color: @form-hint-color;
 	fill: @form-hint-color;
 
+	a {
+		.link(@form-hint-color);
+
+		&:hover {
+			.link-hover(@form-hint-color);
+		}
+	}
+
 	&--danger {
 		color: @form-hint-danger-color;
 		fill: @form-hint-danger-color;
+
+		a {
+			.link(@form-hint-danger-color);
+
+			&:hover {
+				.link-hover(@form-hint-danger-color);
+			}
+		}
 	}
 
 	.form--darken & {
 		color: @form-darken-hint-color;
 		fill: @form-darken-hint-color;
 
+		a {
+			.link(@form-darken-hint-color);
+
+			&:hover {
+				.link-hover(@form-darken-hint-color);
+			}
+		}
+
 		&--danger {
 			color: @form-darken-hint-danger-color;
 			fill: @form-darken-hint-danger-color;
+
+			a {
+				.link(@form-darken-hint-danger-color);
+
+				&:hover {
+					.link-hover(@form-darken-hint-danger-color);
+				}
+			}
 		}
 	}
 
@@ -497,9 +543,25 @@
 		color: @form-lighten-hint-color;
 		fill: @form-lighten-hint-color;
 
+		a {
+			.link(@form-lighten-hint-color);
+
+			&:hover {
+				.link-hover(@form-lighten-hint-color);
+			}
+		}
+
 		&--danger {
 			color: @form-lighten-hint-danger-color;
 			fill: @form-lighten-hint-danger-color;
+
+			a {
+				.link(@form-lighten-hint-danger-color);
+
+				&:hover {
+					.link-hover(@form-lighten-hint-danger-color);
+				}
+			}
 		}
 	}
 }
@@ -710,6 +772,7 @@
 		&::after {
 			opacity: 1;
 			transform: scale3d(1, 1, 1);
+			transition-delay: (@duration / 2);
 		}
 	}
 
