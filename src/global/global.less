@@ -21,6 +21,15 @@
 @font-family-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "NotoColorEmoji", "Segoe UI Emoji", "Segoe UI Symbol";
 @font-family-secondary: @font-family-primary; // -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "NotoColorEmoji", "Segoe UI Emoji", "Segoe UI Symbol"
 
+// Links
+
+@link-color: @link-primary;
+@link-border-width: 1px;
+@link-border-fade: 30%;
+
+@link-hover-darken: 15%;
+@link-hover-border-fade: @link-border-fade;
+
 // Animation
 
 @duration: 0.2s;
@@ -129,13 +138,17 @@
 .link(@color) {
 	color: @color;
 	fill: @color;
-	border-bottom: 1px solid fade(@color, 30%);
+	border-bottom-width: @link-border-width;
+	border-bottom-style: solid;
+	border-bottom-color: fade(@color, @link-border-fade);
 }
 
 .link-hover(@color) {
-	color: darken(@color, 15%);
-	fill: darken(@color, 15%);
-	border-bottom-color: fade(darken(@color, 15%), 30%);
+	@color-hover: darken(@color, @link-hover-darken);
+
+	color: @color-hover;
+	fill: @color-hover;
+	border-bottom-color: fade(@color-hover, @link-hover-border-fade);
 }
 
 // Focus
