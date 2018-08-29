@@ -10,7 +10,7 @@
 @form-control-border-width: 1px;
 @form-control-border-radius: @radius;
 
-@form-control-padding-top: 6px;
+@form-control-padding-top: (@indent / 2);
 @form-control-padding-bottom: @form-control-padding-top;
 @form-control-padding-left: @indent;
 @form-control-padding-right: @form-control-padding-left;
