@@ -25,10 +25,10 @@
 		<div class="form__fields">
 			<div class="form__line">
 				<div class="form__control" style="width: 100%;">
-					<input type="email" id="email" name="email" placeholder="example@site.com" required>
+					<input type="email" id="email" name="email" placeholder="example@site.com" aria-describedby="email-hint" required>
 				</div>
 
-				<div class="form__hint" style="width: 100%;">
+				<div class="form__hint" id="email-hint">
 					Адрес не будет опубликован
 				</div>
 			</div>
@@ -102,10 +102,10 @@
 		<div class="form__fields">
 			<div class="form__line">
 				<div class="form__control  form__control--danger" style="width: 100%;">
-					<input type="password" id="password" name="password" value="1234">
+					<input type="password" id="password" name="password" minlength="6" value="1234" aria-describedby="password-hint-danger">
 				</div>
 
-				<div class="form__hint  form__hint--danger" style="width: 100%;">
+				<div class="form__hint  form__hint--danger" id="password-hint-danger">
 					Пароль должен быть не меньше 6 символов
 				</div>
 			</div>
@@ -231,8 +231,8 @@
 		<div class="form__fields">
 			<div class="form__line">
 				<div class="form__control" style="width: 179px;">
-					<span class="form__after" style="pointer-events: none;">₽</span>
-					<input type="text" id="summ" name="summ" placeholder="0">
+					<span class="form__after" id="summ-after" style="pointer-events: none;">₽</span>
+					<input type="text" id="summ" name="summ" placeholder="0" aria-describedby="summ-after">
 				</div>
 			</div>
 		</div>
