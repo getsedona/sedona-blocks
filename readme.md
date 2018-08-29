@@ -45,7 +45,7 @@
 Не могут использоваться как самостоятельные блоки, обязательно должны вкладываться в шаблонный или содержательный типы.
 
 * [card](https://github.com/constlab/sedona-blocks/tree/master/src/card) ([пример](http://sedona.stage.constlab.ru/blocks/card/))
-* [form](https://github.com/constlab/sedona-blocks/tree/master/src/form) ([пример](http://sedona.stage.constlab.ru/blocks/form/))
+* [form](https://github.com/constlab/sedona-blocks/tree/master/src/form) ([пример](http://sedona.stage.constlab.ru/blocks/form/),  [валидация](http://sedona.stage.constlab.ru/blocks/form/validate.html))
   * [file](https://github.com/constlab/sedona-blocks/tree/master/src/file) ([пример](http://sedona.stage.constlab.ru/blocks/file/))
   * [range](https://github.com/constlab/sedona-blocks/tree/master/src/range) ([пример](http://sedona.stage.constlab.ru/blocks/range/))
 * [social](https://github.com/constlab/sedona-blocks/tree/master/src/social) ([пример](http://sedona.stage.constlab.ru/blocks/social/))
@@ -85,6 +85,7 @@ app: [
   'node_modules/sedona-blocks/src/global/global.js',
   'node_modules/sedona-blocks/src/header/header.js',
   'node_modules/sedona-blocks/src/slider/slider.js',
+  'node_modules/sedona-blocks/src/form/validate.js',
   'node_modules/sedona-blocks/src/file/file.js',
   'node_modules/sedona-blocks/src/range/range.js',
   'node_modules/sedona-blocks/src/table/table.js',
