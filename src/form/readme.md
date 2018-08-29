@@ -1,6 +1,6 @@
 # Form
 
-Инлайновый тип. [Пример](http://sedona.stage.constlab.ru/blocks/form/).
+Инлайновый тип. [Пример](http://sedona.stage.constlab.ru/blocks/form/). [Валидация](http://sedona.stage.constlab.ru/blocks/form/validate.html)
 
 ## Настройка
 
@@ -200,4 +200,4 @@
 
 * Маски: [Inputmask](https://github.com/RobinHerbots/Inputmask)
 * Календарь: [air-datepicker](https://github.com/t1m0n/air-datepicker)
-* Автоподстройка по высоте текстареи: [autosize](https://github.com/jackmoore/autosize)
+* Автоподстройка текстареи: [autosize](https://github.com/jackmoore/autosize)
