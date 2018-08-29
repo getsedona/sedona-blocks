@@ -1,6 +1,6 @@
 # Form
 
-Инлайновый тип. [Пример](http://sedona.stage.constlab.ru/blocks/form/). [Валидация](http://sedona.stage.constlab.ru/blocks/form/validate.html)
+Инлайновый тип. [Пример](http://sedona.stage.constlab.ru/blocks/form/). [Валидация](http://sedona.stage.constlab.ru/blocks/form/validate.html).
 
 ## Настройка
 
