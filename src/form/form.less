@@ -6,7 +6,7 @@
 @form-control-border-width: 1px;
 @form-control-border-radius: @radius;
 
-@form-control-padding-top: 6px;
+@form-control-padding-top: (@indent / 2);
 @form-control-padding-bottom: @form-control-padding-top;
 @form-control-padding-left: @indent;
 @form-control-padding-right: @form-control-padding-left;
@@ -491,6 +491,12 @@
 	line-height: @form-hint-line-height;
 	color: @form-hint-color;
 	fill: @form-hint-color;
+	align-self: flex-start;
+	width: 100%;
+
+	&:not(:last-of-type) {
+		margin-bottom: 0;
+	}
 
 	a {
 		.link(@form-hint-color);
