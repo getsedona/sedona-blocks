@@ -39,8 +39,6 @@ window.sedona.form = {
 
 						el.querySelector('.form__control--danger:first-child input').focus();
 					}
-
-					evt.preventDefault();
 				});
 			});
 		}
