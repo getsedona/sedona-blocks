@@ -291,10 +291,16 @@
 			background-color: @form-control-focus-background-color;
 		}
 
-		&:not([disabled]):hover,
+		body:not(.mobile) &:not([disabled]):hover,
 		&:not([disabled]):focus {
 			border-color: @form-control-hover-border-color;
 			background-color: @form-control-hover-background-color;
+		}
+
+		&:-webkit-autofill,
+		&:-moz-autofill,
+		&:autofill {
+			background-color: #ffc !important;
 		}
 
 		&:not(:focus):invalid {
@@ -320,7 +326,7 @@
 			background-color: @form-darken-control-focus-background-color;
 		}
 
-		&:not([disabled]):hover,
+		body:not(.mobile) &:not([disabled]):hover,
 		&:not([disabled]):focus {
 			border-color: @form-darken-control-hover-border-color;
 			background-color: @form-darken-control-hover-background-color;
@@ -344,7 +350,7 @@
 			background-color: @form-lighten-control-focus-background-color;
 		}
 
-		&:not([disabled]):hover,
+		body:not(.mobile) &:not([disabled]):hover,
 		&:not([disabled]):focus {
 			border-color: @form-lighten-control-hover-border-color;
 			background-color: @form-lighten-control-hover-background-color;
@@ -439,7 +445,7 @@
 			background-color: @form-control-danger-focus-background-color;
 		}
 
-		&:not([disabled]):hover,
+		body:not(.mobile) &:not([disabled]):hover,
 		&:not([disabled]):focus {
 			border-color: @form-control-danger-hover-border-color;
 			background-color: @form-control-danger-hover-background-color;
@@ -458,7 +464,7 @@
 			background-color: @form-darken-control-danger-focus-background-color;
 		}
 
-		&:not([disabled]):hover,
+		body:not(.mobile) &:not([disabled]):hover,
 		&:not([disabled]):focus {
 			border-color: @form-darken-control-danger-hover-border-color;
 			background-color: @form-darken-control-danger-hover-background-color;
@@ -477,7 +483,7 @@
 			background-color: @form-lighten-control-danger-focus-background-color;
 		}
 
-		&:not([disabled]):hover,
+		body:not(.mobile) &:not([disabled]):hover,
 		&:not([disabled]):focus {
 			border-color: @form-lighten-control-danger-hover-border-color;
 			background-color: @form-lighten-control-danger-hover-background-color;
@@ -501,7 +507,7 @@
 	a {
 		.link(@form-hint-color);
 
-		&:hover {
+		body:not(.mobile) &:hover {
 			.link-hover(@form-hint-color);
 		}
 	}
@@ -513,7 +519,7 @@
 		a {
 			.link(@form-hint-danger-color);
 
-			&:hover {
+			body:not(.mobile) &:hover {
 				.link-hover(@form-hint-danger-color);
 			}
 		}
@@ -526,7 +532,7 @@
 		a {
 			.link(@form-darken-hint-color);
 
-			&:hover {
+			body:not(.mobile) &:hover {
 				.link-hover(@form-darken-hint-color);
 			}
 		}
@@ -538,7 +544,7 @@
 			a {
 				.link(@form-darken-hint-danger-color);
 
-				&:hover {
+				body:not(.mobile) &:hover {
 					.link-hover(@form-darken-hint-danger-color);
 				}
 			}
@@ -552,7 +558,7 @@
 		a {
 			.link(@form-lighten-hint-color);
 
-			&:hover {
+			body:not(.mobile) &:hover {
 				.link-hover(@form-lighten-hint-color);
 			}
 		}
@@ -564,7 +570,7 @@
 			a {
 				.link(@form-lighten-hint-danger-color);
 
-				&:hover {
+				body:not(.mobile) &:hover {
 					.link-hover(@form-lighten-hint-danger-color);
 				}
 			}
@@ -723,24 +729,33 @@
 
 	input:focus + span::before {
 		.focus(@form-control-focus-outline-color);
+	}
+
+	body:not(.mobile) & input:focus + span::before {
 		border-color: @form-control-focus-border-color;
 		background-color: @form-control-focus-background-color;
 	}
 
 	.form--darken & input:focus + span::before {
 		.focus(@form-darken-control-focus-outline-color);
+	}
+
+	body:not(.mobile) .form--darken & input:focus + span::before {
 		border-color: @form-darken-control-focus-border-color;
 		background-color: @form-darken-control-focus-background-color;
 	}
 
 	.form--lighten & input:focus + span::before {
 		.focus(@form-lighten-control-focus-outline-color);
+	}
+
+	body:not(.mobile) .form--lighten & input:focus + span::before {
 		border-color: @form-lighten-control-focus-border-color;
 		background-color: @form-lighten-control-focus-background-color;
 	}
 
-	&:hover input:not([disabled]) + span,
-	input:not([disabled]):focus + span {
+	body:not(.mobile) &:hover input:not([disabled]) + span,
+	body:not(.mobile) & input:not([disabled]):focus + span {
 		cursor: pointer;
 
 		&::before {
@@ -749,16 +764,16 @@
 		}
 	}
 
-	.form--darken &:hover input:not([disabled]) + span,
-	.form--darken & input:not([disabled]):focus + span {
+	body:not(.mobile) .form--darken &:hover input:not([disabled]) + span,
+	body:not(.mobile) .form--darken & input:not([disabled]):focus + span {
 		&::before {
 			border-color: @form-darken-control-hover-border-color;
 			background-color: @form-darken-control-hover-background-color;
 		}
 	}
 
-	.form--lighten &:hover input:not([disabled]) + span,
-	.form--lighten & input:not([disabled]):focus + span {
+	body:not(.mobile) .form--lighten &:hover input:not([disabled]) + span,
+	body:not(.mobile) .form--lighten & input:not([disabled]):focus + span {
 		&::before {
 			border-color: @form-lighten-control-hover-border-color;
 			background-color: @form-lighten-control-hover-background-color;
@@ -800,23 +815,23 @@
 		border-color: @form-lighten-accent-border-color !important;
 	}
 
-	input:checked:focus + span::before,
-	&:hover input:not([disabled]):checked + span::before,
-	input:not([disabled]):checked:focus + span::before {
+	body:not(.mobile) & input:checked:focus + span::before,
+	body:not(.mobile) &:hover input:not([disabled]):checked + span::before,
+	body:not(.mobile) & input:not([disabled]):checked:focus + span::before {
 		border-color: @form-accent-hover-border-color !important;
 		background-color: @form-accent-hover-background-color !important;
 	}
 
-	.form--darken & input:checked:focus + span::before,
-	.form--darken &:hover input:not([disabled]):checked + span::before,
-	.form--darken & input:not([disabled]):checked:focus + span::before {
+	body:not(.mobile) .form--darken & input:checked:focus + span::before,
+	body:not(.mobile) .form--darken &:hover input:not([disabled]):checked + span::before,
+	body:not(.mobile) .form--darken & input:not([disabled]):checked:focus + span::before {
 		border-color: @form-darken-accent-hover-border-color !important;
 		background-color: @form-darken-accent-hover-background-color !important;
 	}
 
-	.form--lighten & input:checked:focus + span::before,
-	.form--lighten &:hover input:not([disabled]):checked + span::before,
-	.form--lighten & input:not([disabled]):checked:focus + span::before {
+	body:not(.mobile) .form--lighten & input:checked:focus + span::before,
+	body:not(.mobile) .form--lighten &:hover input:not([disabled]):checked + span::before,
+	body:not(.mobile) .form--lighten & input:not([disabled]):checked:focus + span::before {
 		border-color: @form-lighten-accent-hover-border-color !important;
 		background-color: @form-lighten-accent-hover-background-color !important;
 	}
@@ -833,12 +848,15 @@
 
 		input:focus + span::before {
 			.focus(@form-control-danger-focus-outline-color);
+		}
+
+		body:not(.mobile) & input:focus + span::before {
 			border-color: @form-control-danger-focus-border-color;
 			background-color: @form-control-danger-focus-background-color;
 		}
 
-		&:hover input:not([disabled]) + span::before,
-		input:not([disabled]):focus + span::before {
+		body:not(.mobile) &:hover input:not([disabled]) + span::before,
+		body:not(.mobile) & input:not([disabled]):focus + span::before {
 			border-color: @form-control-danger-hover-border-color;
 		 	background-color: @form-control-danger-hover-background-color;
 		}
@@ -852,12 +870,15 @@
 
 		input:focus + span::before {
 			.focus(@form-darken-control-danger-focus-outline-color);
+		}
+
+		body:not(.mobile) & input:focus + span::before {
 			border-color: @form-darken-control-danger-focus-border-color;
 			background-color: @form-darken-control-danger-focus-background-color;
 		}
 
-		&:hover input:not([disabled]) + span::before,
-		input:not([disabled]):focus + span::before {
+		body:not(.mobile) &:hover input:not([disabled]) + span::before,
+		body:not(.mobile) & input:not([disabled]):focus + span::before {
 			border-color: @form-darken-control-danger-hover-border-color;
 		 	background-color: @form-darken-control-danger-hover-background-color;
 		}
@@ -871,12 +892,15 @@
 
 		input:focus + span::before {
 			.focus(@form-lighten-control-danger-focus-outline-color);
+		}
+
+		body:not(.mobile) & input:focus + span::before {
 			border-color: @form-lighten-control-danger-focus-border-color;
 			background-color: @form-lighten-control-danger-focus-background-color;
 		}
 
-		&:hover input:not([disabled]) + span::before,
-		input:not([disabled]):focus + span::before {
+		body:not(.mobile) &:hover input:not([disabled]) + span::before,
+		body:not(.mobile) & input:not([disabled]):focus + span::before {
 			border-color: @form-lighten-control-danger-hover-border-color;
 		 	background-color: @form-lighten-control-danger-hover-background-color;
 		}
@@ -982,7 +1006,7 @@
 	}
 
 	body:not(.no-focus) &:focus-within input + span,
-	label:hover input:not([disabled]) + span,
+	body:not(.mobile) & label:hover input:not([disabled]) + span,
 	input:not([disabled]):focus + span {
 		border-color: @form-control-hover-border-color;
 		cursor: pointer;
@@ -990,13 +1014,13 @@
 	}
 
 	body:not(.no-focus) .form--darken &:focus-within input + span,
-	.form--darken & label:hover input:not([disabled]) + span,
+	body:not(.mobile) .form--darken & label:hover input:not([disabled]) + span,
 	.form--darken & input:not([disabled]):focus + span {
 		border-color: @form-darken-control-hover-border-color;
 	}
 
 	body:not(.no-focus) .form--lighten &:focus-within input + span,
-	.form--lighten & label:hover input:not([disabled]) + span,
+	body:not(.mobile) .form--lighten & label:hover input:not([disabled]) + span,
 	.form--lighten & input:not([disabled]):focus + span {
 		border-color: @form-lighten-control-hover-border-color;
 	}
@@ -1104,7 +1128,7 @@
 			}
 		}
 
-		// &:not([disabled]):hover {
+		// body:not(.mobile) &:not([disabled]):hover {
 		// 	color: darken(@form-element-color, 15%);
 		// 	fill: darken(@form-element-color, 15%);
 		// }
