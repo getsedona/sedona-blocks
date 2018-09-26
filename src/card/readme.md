@@ -14,18 +14,23 @@
 
 @card-border-width: 1px;
 @card-border-radius: @radius;
+@card-padding: @indent;
+@card-frame-opacity: 0.2;
+@card-media-ratio: 56.25%;
 
 // Darken
 
 @card-darken-color: @light-primary;
 @card-darken-background: @dark-primary;
 @card-darken-border-color: @light-divider;
+@card-darken-frame-opacity: @card-frame-opacity;
 
 // Lighten
 
 @card-lighten-color: @dark-primary;
 @card-lighten-background: @light-primary;
 @card-lighten-border-color: @dark-divider;
+@card-lighten-frame-opacity: @card-frame-opacity;
 ```
 
 ## Разметка
@@ -33,8 +38,10 @@
 ```html
 <div class="card">
   <div class="card__frame">
-    <div class="card__img">
-      <img src="#" alt="">
+    <div class="card__media">
+      <img src="" width="" height="" alt="">
+      <!-- или -->
+      <video src="" poster="" width="" height="" autoplay playsinline loop muted></video>
     </div>
   </div>
 
@@ -52,3 +59,6 @@
 * `card--light-contour` — добавляет карточке светлую обводку
 * `card--darken` — делает карточку в темных тонах
 * `card--lighten` — делает карточку в светлых тонах
+* `card--fill` — делает медиа фоном карточки
+
+*Модификаторы можно миксовать*

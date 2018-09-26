@@ -5,18 +5,23 @@
 
 @card-border-width: 1px;
 @card-border-radius: @radius;
+@card-padding: @indent;
+@card-frame-opacity: 0.2;
+@card-media-ratio: 56.25%;
 
 // Darken
 
 @card-darken-color: @light-primary;
 @card-darken-background: @dark-primary;
 @card-darken-border-color: @light-divider;
+@card-darken-frame-opacity: @card-frame-opacity;
 
 // Lighten
 
 @card-lighten-color: @dark-primary;
 @card-lighten-background: @light-primary;
 @card-lighten-border-color: @dark-divider;
+@card-lighten-frame-opacity: @card-frame-opacity;
 
 
 // Style
@@ -24,21 +29,19 @@
 
 .card {
 	min-height: 100%;
-	margin-bottom: @indent;
 	overflow: hidden;
 	position: relative;
-
-	&:last-child {
-		margin-bottom: 0;
-	}
+	display: flex;
+	flex-direction: column;
 
 	&--dark-contour,
 	&--light-contour,
 	&--darken,
-	&--lighten {
+	&--lighten,
+	&--fill {
 		border-radius: @card-border-radius;
-		padding-top: @indent;
-		padding-bottom: @indent;
+		padding-top: @card-padding;
+		padding-bottom: @card-padding;
 		margin-right: (@grid-gutter / 2);
 		margin-left: (@grid-gutter / 2);
 	}
@@ -73,22 +76,47 @@
 	.card--light-contour &,
 	.card--darken &,
 	.card--lighten & {
-		margin-top: -@indent;
-		margin-left: 0;
-		margin-right: 0;
+		margin-top: -@card-padding;
 		padding-left: 0;
 		padding-right: 0;
 	}
+
+	.card--fill & {
+		position: absolute;
+		padding-right: 0;
+		padding-left: 0;
+		margin-top: 0;
+		margin-bottom: 0;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+
+	.card--darken.card--fill & {
+		opacity: @card-darken-frame-opacity;
+	}
+
+	.card--lighten.card--fill & {
+		opacity: @card-lighten-frame-opacity;
+	}
 }
 
-.card__img {
+.card__media {
 	position: relative;
-	padding-bottom: 56.25%;
+	padding-bottom: @card-media-ratio;
 	overflow: hidden;
 	line-height: 0;
 	background-color: @base-divider;
 
-	img {
+	.card--fill & {
+		padding-bottom: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	img,
+	video {
 		position: absolute;
 		top: 0;
 		left: 0;
@@ -99,9 +127,19 @@
 }
 
 .card__content {
+	position: relative;
 	padding-right: (@grid-gutter / 2);
 	padding-left: (@grid-gutter / 2);
 	max-width: 700px;
+
+	.card--dark-contour &,
+	.card--light-contour &,
+	.card--darken &,
+	.card--lighten &,
+	.card--fill & {
+		padding-right: @card-padding;
+		padding-left: @card-padding;
+	}
 
 	a::before {
 		position: absolute;
