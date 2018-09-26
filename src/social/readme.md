@@ -10,7 +10,14 @@
 
 ```less
 @social-width: @line-height;
-@social-height: @line-height;
+@social-height: @social-width;
+
+@social-gutter: (@indent / 2);
+
+@social-border-radius: 50%;
+
+@social-icon-width: 18px;
+@social-icon-height: @social-icon-width;
 
 @social-color: @light-primary;
 @social-background-color: transparent;
