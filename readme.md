@@ -1,6 +1,4 @@
-# Блоки
-
-Набор типовых блоков для построения структуры страниц.
+# Набор типовых блоков для составления структуры страниц
 
 ### [Гайдлайн по созданию](https://github.com/constlab/sedona-blocks/blob/master/guidelines.md)
 
@@ -21,7 +19,6 @@
 
 Самостоятельные блоки. Не могут вкладываться в другие.
 
-* contact
 * [footer](https://github.com/constlab/sedona-blocks/tree/master/src/footer)
 * [header](https://github.com/constlab/sedona-blocks/tree/master/src/header)
 * heading
