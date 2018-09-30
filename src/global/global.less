@@ -1,4 +1,4 @@
-// Core
+// Settings
 //------------------------------------------------------------------------------
 
 // General
@@ -6,94 +6,72 @@
 @rhythm: 4px;
 @radius: @rhythm; // 4px
 
-// Indent
+// Indents
 
 @indent: @font-size; // 16px
 
-@indent-block-smaller: (@indent * 3); // 48px
-@indent-block-larger: (@indent * 6); // 96px
-
 @indent-element-smaller: (@indent * 2); // 32px
 @indent-element-larger: (@indent * 3); // 48px
+
+@indent-block-smaller: (@indent * 3); // 48px
+@indent-block-larger: (@indent * 6); // 96px
 
 // Font family
 
 @font-family-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "NotoColorEmoji", "Segoe UI Emoji", "Segoe UI Symbol";
 @font-family-secondary: @font-family-primary; // -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "NotoColorEmoji", "Segoe UI Emoji", "Segoe UI Symbol"
 
-// Links
-
-@link-color: @link-primary;
-@link-border-width: 1px;
-@link-border-fade: 30%;
-
-@link-hover-darken: 15%;
-@link-hover-border-fade: @link-border-fade;
-
-// Animation
-
-@duration: 0.2s;
-@timing-function: ease-out;
-
-
-// Color
-//------------------------------------------------------------------------------
-
-// Base
+// Base color
 
 @base-primary: @dark-primary; // #1f1f1f
 @base-secondary: @dark-secondary; // #8a8a8a
 @base-hint: @dark-hint; // #b8b8b8
 @base-divider: @dark-divider; // #e0e0e0
 
-// Dark
+// Dark color
 
 @dark-primary: lighten(#000, 12%); // #1f1f1f
 @dark-secondary: lighten(#000, 54%); // #8a8a8a
 @dark-hint: lighten(#000, 72%); // #b8b8b8
 @dark-divider: lighten(#000, 88%); // #e0e0e0
 
-// Light
+// Light color
 
 @light-primary: #fff;
 @light-secondary: darken(#fff, 30%); // #b3b3b3
 @light-hint: darken(#fff, 50%); // #808080
 @light-divider: darken(#fff, 72%); // #474747
 
-// Links
+// Links color
 
 @link-primary: #007aff;
 
-// Buttons
+// Buttons color
 
 @button-primary: @link-primary; // #007aff
 
-// Alerts
+// Alerts color
 
 @alert-success: #4cd964;
 @alert-warning: #fc0;
 @alert-danger: #ff3b30;
 
-
-// Text sizes
-//------------------------------------------------------------------------------
-
-// Normal
+// Normal text size
 
 @font-size: (@rhythm * 4); // 16px
 @line-height: (@rhythm * 7); // 28px
 
-// Small
+// Small text size
 
 @font-size-smaller: (@rhythm * 3); // 12px
 @line-height-smaller: (@rhythm * 5); // 20px
 
-// Large
+// Large text size
 
 @font-size-larger: (@rhythm * 6); // 24px
 @line-height-larger: (@rhythm * 8); // 32px
 
-// Headers
+// Headers text size
 
 @font-size-h1: (@rhythm * 8); // 32px
 @line-height-h1: (@rhythm * 10); // 40px
@@ -113,9 +91,19 @@
 @font-size-h3-larger: @font-size-h3; // 20px
 @line-height-h3-larger: @line-height-h3; // 28px
 
+// Links
 
-// Grid
-//------------------------------------------------------------------------------
+@link-color: @link-primary;
+@link-border-width: 1px;
+@link-border-fade: 30%;
+
+@link-hover-darken: 15%;
+@link-hover-border-fade: @link-border-fade;
+
+// Animation
+
+@duration: 0.2s;
+@timing-function: ease-out;
 
 // Breakpoints
 
@@ -133,8 +121,6 @@
 // Mixins
 //------------------------------------------------------------------------------
 
-// Link
-
 .link(@color) {
 	color: @color;
 	fill: @color;
@@ -151,8 +137,6 @@
 	border-bottom-color: fade(@color-hover, @link-hover-border-fade);
 }
 
-// Focus
-
 .focus(@color, @width: 2px) {
 	outline: none;
 	box-shadow: 0px 0px 0px @width @color;
@@ -162,15 +146,13 @@
 	}
 }
 
-// Disabled
-
 .disabled(@opacity: 0.5) {
 	cursor: not-allowed;
 	opacity: @opacity;
 }
 
 
-// General
+// Global
 //------------------------------------------------------------------------------
 
 html {
@@ -198,16 +180,11 @@ body {
 	background-color: #fff;
 }
 
-
-// Headings
-//------------------------------------------------------------------------------
-
 h1,
 h2,
 h3 {
 	margin-top: 0;
 	margin-bottom: 0;
-	font-weight: bold;
 	font-family: @font-family-secondary;
 }
 
@@ -240,10 +217,6 @@ h3 {
 		line-height: @line-height-h3-larger;
 	}
 }
-
-
-// Elements
-//------------------------------------------------------------------------------
 
 p,
 ul,

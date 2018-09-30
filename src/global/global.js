@@ -1,13 +1,9 @@
-// Core
+// Global
 //------------------------------------------------------------------------------
-
-'use strict';
-
 
 // Задаем пространство имен
 
 window.sedona = {}
-
 
 // Определяем мобильное устройство
 
@@ -16,7 +12,6 @@ const MOBILE = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.
 if (MOBILE) {
 	document.querySelector('body').classList.add('mobile');
 }
-
 
 // Убираем или показываем аутлайн
 
