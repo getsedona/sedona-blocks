@@ -33,16 +33,6 @@
 <section class="scene">
   …
 </section>
-
-<section class="scene">
-  …
-</section>
-
-<section class="scene">
-  …
-</section>
-
-…
 ```
 
 ## Модификаторы
