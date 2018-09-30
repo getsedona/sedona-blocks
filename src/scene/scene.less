@@ -1,4 +1,4 @@
-// Scene
+// Settings
 //------------------------------------------------------------------------------
 
 // Darken
@@ -14,10 +14,12 @@
 @scene-lighten-link-color: @link-primary;
 
 
-// Style
+// Scene
 //------------------------------------------------------------------------------
 
 .scene {
+	margin-left: auto;
+	margin-right: auto;
 	padding-bottom: @indent-block-smaller;
 
 	@media (min-width: @grid-breakpoints-sm) {
@@ -57,6 +59,8 @@
 		}
 	}
 
+	&--darken + &:not(&--darken):not(&--lighten),
+	&--lighten + &:not(&--lighten):not(&--darken),
 	&--fill {
 		padding-top: @indent-block-smaller;
 
