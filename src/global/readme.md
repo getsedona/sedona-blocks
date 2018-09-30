@@ -99,12 +99,12 @@
 
 // Links
 
-@link-color: @link-primary;
+@link-color: @link-primary; // #007aff
 @link-border-width: 1px;
 @link-border-fade: 30%;
 
 @link-hover-darken: 15%;
-@link-hover-border-fade: @link-border-fade;
+@link-hover-border-fade: @link-border-fade; // 30%
 
 // Animation
 
