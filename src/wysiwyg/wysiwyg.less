@@ -29,18 +29,18 @@
 
 	ul,
 	ol {
-		margin-bottom: @indent;
-		padding-left: @line-height;
+		margin-bottom: 1em;
+		padding-left: 1.5em;
 		list-style-type: none;
 
 		ul,
 		ol {
-			margin-top: (@indent / 2);
+			margin-top: 0.5em;
 			margin-bottom: 0;
 		}
 
 		& > li {
-			margin-bottom: (@indent / 2);
+			margin-bottom: 0.5em;
 
 			&:last-child {
 				margin-bottom: 0;
@@ -49,7 +49,7 @@
 			&::before {
 				content: "\2014";
 				position: absolute;
-				margin-left: -@line-height;
+				margin-left: -1.5em;
 				opacity: 0.2;
 			}
 		}
@@ -62,19 +62,19 @@
 			content: counters(code, ".") ". ";
 			position: static;
 			display: inline-block;
-			min-width: @line-height;
+			min-width: 1.5em;
 			opacity: 0.4;
 			counter-increment: code;
 		}
 	}
 
 	p {
-		margin-bottom: @indent;
+		margin-bottom: 1em;
 	}
 
 	p + ul,
 	p + ol {
-		margin-top: (@indent / -2);
+		margin-top: -0.5em;
 	}
 
 	table {
