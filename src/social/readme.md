@@ -31,18 +31,18 @@
 // Darken
 
 @social-darken-color: @light-primary;
-@social-darken-background-color: @dark-primary !important;
+@social-darken-background-color: @dark-primary;
 
 @social-darken-hover-color: @social-darken-color;
-@social-darken-hover-background-color: darken(@social-darken-background-color, 15%);
+@social-darken-hover-background-color: lighten(@social-darken-background-color, 10%);
 
 // Lighten
 
 @social-lighten-color: @dark-primary;
-@social-lighten-background-color: @light-primary !important;
+@social-lighten-background-color: @light-primary;
 
 @social-lighten-hover-color: @social-lighten-color;
-@social-lighten-hover-background-color: lighten(@social-lighten-background-color, 15%);
+@social-lighten-hover-background-color: darken(@social-lighten-background-color, 20%);
 ```
 
 ## Разметка
