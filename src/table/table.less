@@ -1,4 +1,4 @@
-// Table
+// Settings
 //------------------------------------------------------------------------------
 
 // Base
@@ -10,6 +10,7 @@
 @table-head-color: @base-secondary;
 
 @table-divider: @base-divider;
+
 @table-tr-hover-background-color: @table-divider;
 
 // Darken
@@ -17,6 +18,7 @@
 @table-darken-head-color: @light-secondary;
 
 @table-darken-divider: @light-divider;
+
 @table-darken-tr-hover-background-color: @table-darken-divider;
 
 // Lighten
@@ -24,18 +26,23 @@
 @table-lighten-head-color: @dark-secondary;
 
 @table-lighten-divider: @dark-divider;
+
 @table-lighten-tr-hover-background-color: @table-lighten-divider;
 
 
-// Style
+// Table
 //------------------------------------------------------------------------------
 
 .table {
 	position: relative;
-	display: inline-block;
-	max-width: 100%;
-	vertical-align: top;
+	margin-right: -(@grid-gutter / 2);
+	margin-left: -(@grid-gutter / 2);
 	margin-bottom: @indent;
+
+	@media (min-width: @grid-breakpoints-sm) {
+		margin-right: auto;
+		margin-left: auto;
+	}
 
 	&:last-child {
 		margin-bottom: 0;
@@ -85,8 +92,15 @@
 		opacity: 1;
 	}
 
-	&--block {
-		display: block;
+	&--responsive {
+		@media (max-width: (@grid-breakpoints-sm - 1px)) {
+			white-space: normal !important;
+
+			&::before,
+			&::after {
+				display: none;
+			}
+		}
 	}
 }
 
@@ -94,10 +108,22 @@
 	overflow-x: auto;
 	-webkit-overflow-scrolling: touch;
 
+	.table--responsive & {
+		@media (max-width: (@grid-breakpoints-sm - 1px)) {
+			overflow-x: visible;
+		}
+	}
+
 	table {
 		width: 100%;
 		border-collapse: collapse;
 		border-spacing: 0;
+
+		.table--responsive & {
+			@media (max-width: (@grid-breakpoints-sm - 1px)) {
+				display: block;
+			}
+		}
 	}
 
 	th,
@@ -107,6 +133,43 @@
 		vertical-align: top;
 		border-bottom: 1px solid @table-divider;
 		text-align: left;
+
+		@media (min-width: @grid-breakpoints-sm) {
+			body.mobile & {
+				&:first-child {
+					padding-left: 0;
+				}
+
+				&:last-child {
+					padding-right: 0;
+				}
+			}
+		}
+
+		.table--responsive & {
+			@media (max-width: (@grid-breakpoints-sm - 1px)) {
+				text-align: left !important;
+				white-space: normal !important;
+				display: block;
+				border-bottom-width: 0;
+				padding-top: 0;
+
+				&:first-child {
+					padding-top: @indent;
+				}
+
+				&:before {
+					display: block;
+					content: attr(data-title);
+					font-size: @table-head-font-size;
+					font-weight: @table-head-font-weight;
+					font-family: @table-head-font-family;
+					line-height: @table-head-line-height;
+					color: @table-head-color;
+					fill: @table-head-color;
+				}
+			}
+		}
 
 		.table--darken & {
 			border-color: @table-darken-divider;
@@ -139,51 +202,56 @@
 		}
 	}
 
-	tbody tr {
-		background-color: fade(@table-tr-hover-background-color, 0);
-		transition-property: background-color;
-		transition: @duration @timing-function;
-
-		&:hover {
-			background-color: fade(@table-tr-hover-background-color, 100%);
-		}
-
-		.table--darken & {
-			border-color: fade(@table-darken-tr-hover-background-color, 0);
-
-			&:hover {
-				background-color: fade(@table-darken-tr-hover-background-color, 100%);
-			}
-		}
-
-		.table--lighten & {
-			border-color: fade(@table-lighten-tr-hover-background-color, 0);
-
-			&:hover {
-				background-color: fade(@table-lighten-tr-hover-background-color, 100%);
+	thead {
+		.table--responsive & {
+			@media (max-width: (@grid-breakpoints-sm - 1px)) {
+				display: none;
 			}
 		}
 	}
-}
 
-.table__icon {
-	display: inline-block;
-	width: 18px;
-	height: @line-height;
-	text-indent: -9999px;
-	background-position: 50%;
-	background-repeat: no-repeat;
-	background-size: 24px 24px;
+	tbody {
+		.table--responsive & {
+			@media (max-width: (@grid-breakpoints-sm - 1px)) {
+				display: block;
+			}
+		}
 
-	&--no {
-		@icon: escape("<svg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' fill='@{alert-danger}'><path d='M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z'/></svg>");
+		tr {
+			background-color: fade(@table-tr-hover-background-color, 0);
+			transition-property: background-color;
+			transition: @duration @timing-function;
 
-		background-image: url("data:image/svg+xml, @{icon}");
-	}
+			.table--responsive & {
+				@media (max-width: (@grid-breakpoints-sm - 1px)) {
+					display: block;
+					border-bottom: 1px solid @table-divider;
 
-	&--yes {
-		@icon: escape("<svg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg' fill='@{alert-success}'><path d='M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z'/></svg>");
+					&:first-child {
+						border-top: 1px solid @table-divider;
+					}
+				}
+			}
 
-		background-image: url("data:image/svg+xml, @{icon}");
+			body:not(.mobile) &:hover {
+				background-color: fade(@table-tr-hover-background-color, 100%);
+			}
+
+			.table--darken & {
+				border-color: fade(@table-darken-tr-hover-background-color, 0);
+
+				body:not(.mobile) &:hover {
+					background-color: fade(@table-darken-tr-hover-background-color, 100%);
+				}
+			}
+
+			.table--lighten & {
+				border-color: fade(@table-lighten-tr-hover-background-color, 0);
+
+				body:not(.mobile) &:hover {
+					background-color: fade(@table-lighten-tr-hover-background-color, 100%);
+				}
+			}
+		}
 	}
 }

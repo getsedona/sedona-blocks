@@ -5,9 +5,8 @@
 ## Особенности
 
 * Располагается только внутри блочного типа
-* По-умолчанию — блочно-строчный (изменяется через [модификаторы](#Модификаторы)) и равен ширине контента внутри
+* Растягивается на всю ширину блока
 * Если содержимое не помещается — появляется горизонтальная прокрутка
-* Имеет встроенные иконки (указаны в разметке)
 * По-умолчанию имеет тон всего сайта. Может принудительно иметь светлый и темный тон
 
 ## Настройка
@@ -22,6 +21,7 @@
 @table-head-color: @base-secondary;
 
 @table-divider: @base-divider;
+
 @table-tr-hover-background-color: @table-divider;
 
 // Darken
@@ -29,6 +29,7 @@
 @table-darken-head-color: @light-secondary;
 
 @table-darken-divider: @light-divider;
+
 @table-darken-tr-hover-background-color: @table-darken-divider;
 
 // Lighten
@@ -36,6 +37,7 @@
 @table-lighten-head-color: @dark-secondary;
 
 @table-lighten-divider: @dark-divider;
+
 @table-lighten-tr-hover-background-color: @table-lighten-divider;
 ```
 
@@ -54,11 +56,15 @@
       <tbody>
         <tr>
           <td>…</td>
-          <td><span class="table__icon  table__icon--no">Нет</span></td>
-          <td><span class="table__icon  table__icon--yes">Есть</span></td>
           …
         </tr>
       </tbody>
+      <tfoot>
+        <tr>
+          <td>…</td>
+          …
+        </tr>
+      </tfoot>
     </table>
   </div>
 </div>
@@ -70,7 +76,7 @@
 
 * `table--darken` — делает таблицу в темных тонах
 * `table--lighten` — делает таблицу в светлых тонах
-* `table--block` — делает таблицу блочной, то есть растягивает на 100% доступной ширины
+* `table--responsive` — перестраивает таблицу на маленьких экранах
 
 ## Дополнительно
 
