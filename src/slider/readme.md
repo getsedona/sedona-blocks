@@ -8,6 +8,7 @@
 * Подключается к `.scene` или располагается внутри
 * Может вкладываться во внутрь других блочных типов
 * По-умолчанию имеет тон всего сайта. Может принудительно иметь светлый и темный тон
+* Тон слайдов так же принудительно можно настроить
 
 ## Настройка
 
@@ -19,8 +20,6 @@
 @slider-item-background-position: 50%;
 @slider-item-background-size: cover;
 
-@slider-max-width: @grid-breakpoints-xl;
-
 @slider-bullet-width: 7px;
 @slider-bullet-height: 7px;
 @slider-bullet-radius: 50%;
@@ -28,12 +27,10 @@
 // Darken
 
 @slider-item-darken-color: @light-primary;
-@slider-item-darken-background-color: @dark-primary;
 
 // Lighten
 
 @slider-item-lighten-color: @dark-primary;
-@slider-item-lighten-background-color: @light-primary;
 ```
 
 ## Разметка
@@ -42,15 +39,7 @@
 <div class="slider  swiper-container">
   <div class="slider__list  swiper-wrapper">
     <div class="slider__item  swiper-slide">
-      
-      <!-- Дополнительно -->
-      <div class="slider__wrap">
-        <div class="slider__content">
-          …
-        </div>
-      </div>
-      <!-- / -->
-      
+      …
     </div>
 
     …
@@ -67,3 +56,8 @@
 * `slider--darken` — делает слайдер в темных тонах
 * `slider--lighten` — делает слайдер в светлых тонах
 * `slider--scene` — делает слайдер сценой (добавляет отступы у итемов сверху и снизу)
+
+### `slider__item`
+
+* `slider__item--darken` — делает итем в темных тонах
+* `slider__item--lighten` — делает итем в светлых тонах

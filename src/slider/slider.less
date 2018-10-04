@@ -1,4 +1,4 @@
-// Slider
+// Settings
 //------------------------------------------------------------------------------
 
 // Base
@@ -8,8 +8,6 @@
 @slider-item-background-position: 50%;
 @slider-item-background-size: cover;
 
-@slider-max-width: @grid-breakpoints-xl;
-
 @slider-bullet-width: 7px;
 @slider-bullet-height: 7px;
 @slider-bullet-radius: 50%;
@@ -17,18 +15,26 @@
 // Darken
 
 @slider-item-darken-color: @light-primary;
-@slider-item-darken-background-color: @dark-primary;
 
 // Lighten
 
 @slider-item-lighten-color: @dark-primary;
-@slider-item-lighten-background-color: @light-primary;
 
 
-// Style
+// Slider
 //------------------------------------------------------------------------------
 
 .slider {
+	&--darken {
+		color: @slider-item-darken-color;
+		fill: @slider-item-darken-color;
+	}
+
+	&--lighten  {
+		color: @slider-item-lighten-color;
+		fill: @slider-item-lighten-color;
+	}
+
 	&--scene {
 		padding: 0;
 	}
@@ -48,13 +54,11 @@
 	&--darken {
 		color: @slider-item-darken-color;
 		fill: @slider-item-darken-color;
-		background-color: @slider-item-darken-background-color;
 	}
 
 	&--lighten {
 		color: @slider-item-lighten-color;
 		fill: @slider-item-lighten-color;
-		background-color: @slider-item-lighten-background-color;
 	}
 
 	.slider--scene & {
@@ -73,23 +77,16 @@
 	}
 }
 
-.slider__wrap {
-	max-width: @slider-max-width;
-	margin-right: auto;
-	margin-left: auto;
-}
-
-.slider__content {
-	padding-right: (@grid-gutter / 2);
-	padding-left: (@grid-gutter / 2);
-}
-
 .slider__pagination {
 	position: relative;
 	height: @slider-bullet-height;
 	margin-top: @indent;
 	margin-right: auto;
 	margin-left: auto;
+
+	&.swiper-pagination-lock {
+		display: none;
+	}
 
 	.slider--scene & {
 		height: (@slider-bullet-height + @indent);
@@ -115,7 +112,15 @@
 	transform: scale3d(0, 0, 1);
 	opacity: 0;
 	transition: @duration @timing-function;
-	transition-property: left, transform, opacity;
+	transition-property: background-color, left, transform, opacity;
+
+	.slider--darken & {
+		background-color: @slider-item-darken-color;
+	}
+
+	.slider--lighten & {
+		background-color: @slider-item-lighten-color;
+	}
 
 	&--active-main {
 		transform: scale3d(1, 1, 1);
@@ -139,6 +144,7 @@
 	}
 
 	&--active {
+		cursor: default;
 		opacity: 1 !important;
 	}
 }

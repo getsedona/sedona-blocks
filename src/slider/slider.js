@@ -24,6 +24,24 @@ window.sedona.slider = function() {
 						bulletActiveClass: 'slider__bullet--active'
 					},
 				});
+
+				slider.on('slideChange', function() {
+					let element = this;
+
+					if (element.el.classList.contains('slider--scene')) {
+						if (element.slides[element.activeIndex].classList.contains('slider__item--darken')) {
+							element.el.classList.add('slider--darken');
+						} else {
+							element.el.classList.remove('slider--darken');
+						}
+
+						if (element.slides[element.activeIndex].classList.contains('slider__item--lighten')) {
+							element.el.classList.add('slider--lighten');
+						} else {
+							element.el.classList.remove('slider--lighten');
+						}
+					}
+				});
 			}
 		});
 	}
