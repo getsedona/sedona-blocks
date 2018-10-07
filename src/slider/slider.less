@@ -88,9 +88,9 @@
 		display: none;
 	}
 
-	.slider--scene & {
-		height: (@slider-bullet-height + @indent);
-		margin-top: -(@slider-bullet-height + @indent);
+	&--inside {
+	 	height: (@slider-bullet-height + @indent);
+	 	margin-top: -(@slider-bullet-height + @indent);
 	}
 
 	&--bullets {
@@ -114,11 +114,11 @@
 	transition: @duration @timing-function;
 	transition-property: background-color, left, transform, opacity;
 
-	.slider--darken & {
+	.slider--darken .slider__pagination--inside & {
 		background-color: @slider-item-darken-color;
 	}
 
-	.slider--lighten & {
+	.slider--lighten .slider__pagination--inside & {
 		background-color: @slider-item-lighten-color;
 	}
 

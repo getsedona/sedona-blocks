@@ -61,3 +61,7 @@
 
 * `slider__item--darken` — делает итем в темных тонах
 * `slider__item--lighten` — делает итем в светлых тонах
+
+### `slider__pagination`
+
+* `slider__pagination--inside` — перемещает пагинацию внутрь слайдера 
