@@ -45,6 +45,7 @@
 * [form](https://github.com/constlab/sedona-blocks/tree/master/src/form) ([пример](http://sedona.stage.constlab.ru/blocks/form/),  [валидация](http://sedona.stage.constlab.ru/blocks/form/form-validate.html))
   * [file](https://github.com/constlab/sedona-blocks/tree/master/src/file) ([пример](http://sedona.stage.constlab.ru/blocks/file/))
   * [range](https://github.com/constlab/sedona-blocks/tree/master/src/range) ([пример](http://sedona.stage.constlab.ru/blocks/range/))
+* [icon](https://github.com/constlab/sedona-blocks/tree/master/src/icon) ([пример](http://sedona.stage.constlab.ru/blocks/icon/))
 * [social](https://github.com/constlab/sedona-blocks/tree/master/src/social) ([пример](http://sedona.stage.constlab.ru/blocks/social/))
 * [table](https://github.com/constlab/sedona-blocks/tree/master/src/table) ([пример](http://sedona.stage.constlab.ru/blocks/table/))
 
@@ -73,6 +74,7 @@ main: [
   'node_modules/sedona-blocks/src/form/form.less',
   'node_modules/sedona-blocks/src/file/file.less',
   'node_modules/sedona-blocks/src/range/range.less',
+  'node_modules/sedona-blocks/src/icon/icon.less',
   'node_modules/sedona-blocks/src/social/social.less',
   'node_modules/sedona-blocks/src/table/table.less',
   'src/less/main.less'
