@@ -11,15 +11,23 @@
 ## Настройка
 
 ```less
+// Base
+
 @range-height: @form-control-height;
 
+// Line
+
 @range-line-height: 2px;
-@range-line-border-radius: (@range-line-height / 2);
+
 @range-line-background-color: @form-control-border-color;
 @range-line-background-image: none;
 @range-line-background-repeat: repeat;
 @range-line-background-position: 0 0;
 @range-line-background-size: auto auto;
+
+@range-line-border-radius: (@range-line-height / 2);
+
+// Bar
 
 @range-bar-background-color: @form-accent-border-color;
 @range-bar-background-image: none;
@@ -27,18 +35,25 @@
 @range-bar-background-position: 0 0;
 @range-bar-background-size: auto auto;
 
+// Slider
+
 @range-slider-width: @font-size;
 @range-slider-height: @font-size;
-@range-slider-border-width: 0;
-@range-slider-border-color: transparent;
-@range-slider-border-radius: 50%;
+
 @range-slider-background-color: @range-bar-background-color;
 @range-slider-background-image: none;
 @range-slider-background-repeat: repeat;
 @range-slider-background-position: 0 0;
 @range-slider-background-size: auto auto;
 
-@range-hint-color: @form-hint-color;
+@range-slider-border-width: 0;
+@range-slider-border-color: transparent;
+@range-slider-border-radius: 50%;
+
+// Hint
+
 @range-hint-font-size: @form-hint-font-size;
 @range-hint-line-height: @form-hint-line-height;
+
+@range-hint-color: @form-hint-color;
 ```
