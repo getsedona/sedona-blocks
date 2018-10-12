@@ -12,3 +12,9 @@
 @file-preview-width: (@line-height * 3);
 @file-preview-height: (@line-height * 3);
 ```
+
+## Разметка
+
+```html
+<input type="file" class="file">
+```
