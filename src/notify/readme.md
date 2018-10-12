@@ -9,13 +9,18 @@
 ## Настройка
 
 ```less
+@notify-color: inherit;
+@notify-link-color: @link-primary;
+
+@notify-background-color: @base-divider;
+@notify-background-image: none;
+@notify-background-repeat: repeat;
+@notify-background-position: 0 0;
+@notify-background-size: auto auto;
+
 @notify-border-width: 0;
 @notify-border-color: transparent;
 @notify-border-radius: @radius;
-
-@notify-color: inherit;
-@notify-background: @base-divider;
-@notify-link-color: @link-primary;
 
 @notify-max-width: 500px;
 ```
