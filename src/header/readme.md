@@ -1,40 +1,30 @@
 # Шапка
 
-Шаблонный тип.
+Шаблонный тип. [Пример](http://sedona.stage.constlab.ru/blocks/header/).
 
 ## Особенности
 
 * Подключается к `<header>` или располагается внутри него
 * По-умолчанию имеет максимальную для контента ширину — `@header-max-width`
 * По-умолчанию имеет мобильный вид. Разворачивается, начиная с ширины `@header-breakpoints-desktop`
-* Имеет встраиваемые дополнительные элементы и иконки (указаны в разметке)
-* По-умолчанию имеет тон всего сайта. Может принудительно иметь светлый и темный тон
 
 ## Настройка
 
 ```less
-// Base
-
 @header-height: (@line-height + @indent * 2);
 
 @header-color: @base-primary;
-@header-background: none;
 @header-link-color: @link-primary;
+
+@header-background-color: transparent;
+@header-background-image: none;
+@header-background-repeat: repeat;
+@header-background-position: 0 0;
+@header-background-size: auto auto;
 
 @header-breakpoints: @grid-breakpoints-md;
 @header-max-width: @grid-breakpoints-xl;
-
-// Darken
-
-@header-darken-color: @light-primary;
-@header-darken-background: @dark-primary;
-@header-darken-link-color: @header-link-color;
-
-// Lighten
-
-@header-lighten-color: @dark-primary;
-@header-lighten-background: @light-primary;
-@header-lighten-link-color: @header-link-color;
+@header-gutter: @indent;
 ```
 
 ## Разметка
@@ -51,8 +41,8 @@
         <!-- Дополнительно (примеры) -->
         <li>Привет!</li>
         <li><a href="#">Вход</a></li>
-        <li class="header__icon  header__icon--call"><a href="#">8 800 200-66-00</a></li>
-        <li class="header__icon  header__icon--search"><a href="#">Поиск</a></li>
+        <li><a href="#">8 800 200-66-00</a></li>
+        <li><a href="#">Поиск</a></li>
         <!-- / -->
   
         <li class="header__toggle"><button class="js-header-toggle">Меню</button></li>
@@ -85,8 +75,8 @@
       
       <!-- Дополнительно -->
       <ul class="header__extra  header__extra--hidden-mobile">
-        <li class="header__icon  header__icon--call"><a href="#">8 800 200-66-00</a></li>
-        <li class="header__icon  header__icon--search"><a href="#">Поиск</a></li>
+        <li><a href="#">8 800 200-66-00</a></li>
+        <li><a href="#">Поиск</a></li>
       </ul>
       <!-- / -->
     </div>
@@ -95,11 +85,6 @@
 ```
 
 ## Модификаторы
-
-### `header`
-
-* `header--darken` — делает шапку в темных тонах
-* `header--lighten` — делает шапку в светлых тонах
 
 ### `header__extra`
 
