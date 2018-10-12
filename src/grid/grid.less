@@ -30,28 +30,6 @@
 }
 
 
-// Column modifier
-//------------------------------------------------------------------------------
-
-.make-grid-col-modifier(-);
-
-@media (min-width: @grid-breakpoints-sm) {
-	.make-grid-col-modifier(--sm);
-}
-
-@media (min-width: @grid-breakpoints-md) {
-	.make-grid-col-modifier(--md);
-}
-
-@media (min-width: @grid-breakpoints-lg) {
-	.make-grid-col-modifier(--lg);
-}
-
-@media (min-width: @grid-breakpoints-xl) {
-	.make-grid-col-modifier(--xl);
-}
-
-
 // Grid
 //------------------------------------------------------------------------------
 
@@ -96,6 +74,24 @@
 			margin-bottom: @indent-element-larger;
 		}
 	}
+}
+
+.make-grid-col-modifier(-);
+
+@media (min-width: @grid-breakpoints-sm) {
+	.make-grid-col-modifier(--sm);
+}
+
+@media (min-width: @grid-breakpoints-md) {
+	.make-grid-col-modifier(--md);
+}
+
+@media (min-width: @grid-breakpoints-lg) {
+	.make-grid-col-modifier(--lg);
+}
+
+@media (min-width: @grid-breakpoints-xl) {
+	.make-grid-col-modifier(--xl);
 }
 
 .grid__content {
