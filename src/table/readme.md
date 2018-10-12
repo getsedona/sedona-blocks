@@ -14,29 +14,40 @@
 ```less
 // Base
 
+@table-divider: @base-divider;
+
+// Head
+
 @table-head-font-size: @font-size-smaller;
 @table-head-line-height: @line-height-smaller;
-@table-head-font-weight: normal;
-@table-head-font-family: @font-family-primary;
+
 @table-head-color: @base-secondary;
 
-@table-divider: @base-divider;
+// Tr
 
 @table-tr-hover-background-color: @table-divider;
 
 // Darken
 
+@table-darken-divider: @light-divider;
+
+// Darken head
+
 @table-darken-head-color: @light-secondary;
 
-@table-darken-divider: @light-divider;
+// Darken tr
 
 @table-darken-tr-hover-background-color: @table-darken-divider;
 
 // Lighten
 
+@table-lighten-divider: @dark-divider;
+
+// Lighten head
+
 @table-lighten-head-color: @dark-secondary;
 
-@table-lighten-divider: @dark-divider;
+// Lighten tr
 
 @table-lighten-tr-hover-background-color: @table-lighten-divider;
 ```
