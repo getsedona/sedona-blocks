@@ -19,8 +19,8 @@
 
 Самостоятельные блоки. Не могут вкладываться в другие.
 
-* [footer](https://github.com/constlab/sedona-blocks/tree/master/src/footer)
-* [header](https://github.com/constlab/sedona-blocks/tree/master/src/header)
+* [footer](https://github.com/constlab/sedona-blocks/tree/master/src/footer) ([пример](http://sedona.stage.constlab.ru/blocks/footer/))
+* [header](https://github.com/constlab/sedona-blocks/tree/master/src/header) ([пример](http://sedona.stage.constlab.ru/blocks/header/))
 * heading
 * [notify](https://github.com/constlab/sedona-blocks/tree/master/src/notify) ([пример](http://sedona.stage.constlab.ru/blocks/notify/))
 * pricing
