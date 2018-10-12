@@ -12,37 +12,56 @@
 ```less
 // Base
 
-@social-width: @line-height;
-@social-height: @social-width;
-
 @social-gutter: (@indent / 2);
 
-@social-border-radius: 50%;
+// Item
+
+@social-item-width: @line-height;
+@social-item-height: @social-item-width;
+
+@social-item-color: @light-primary;
+
+@social-item-background-color: transparent;
+@social-item-background-image: none;
+@social-item-background-repeat: repeat;
+@social-item-background-position: 0 0;
+@social-item-background-size: auto auto;
+
+@social-item-border-radius: 50%;
+
+@social-item-hover-color: @social-item-color;
+@social-item-hover-background-color: @social-item-background-color;
+
+// Icon
 
 @social-icon-width: 18px;
 @social-icon-height: @social-icon-width;
 
-@social-color: @light-primary;
-@social-background-color: transparent;
+// Darken item
 
-@social-hover-color: @social-color;
-@social-hover-background-color: @social-background-color;
+@social-darken-item-color: @light-primary;
 
-// Darken
+@social-darken-item-background-color: @dark-primary;
+@social-darken-item-background-image: none;
+@social-darken-item-background-repeat: repeat;
+@social-darken-item-background-position: 0 0;
+@social-darken-item-background-size: auto auto;
 
-@social-darken-color: @light-primary;
-@social-darken-background-color: @dark-primary;
+@social-darken-item-hover-color: @social-darken-item-color;
+@social-darken-item-hover-background-color: lighten(@social-darken-item-background-color, 10%);
 
-@social-darken-hover-color: @social-darken-color;
-@social-darken-hover-background-color: lighten(@social-darken-background-color, 10%);
+// Lighten item
 
-// Lighten
+@social-lighten-item-color: @dark-primary;
 
-@social-lighten-color: @dark-primary;
-@social-lighten-background-color: @light-primary;
+@social-lighten-item-background-color: @light-primary;
+@social-lighten-item-background-image: none;
+@social-lighten-item-background-repeat: repeat;
+@social-lighten-item-background-position: 0 0;
+@social-lighten-item-background-size: auto auto;
 
-@social-lighten-hover-color: @social-lighten-color;
-@social-lighten-hover-background-color: darken(@social-lighten-background-color, 20%);
+@social-lighten-item-hover-color: @social-lighten-item-color;
+@social-lighten-item-hover-background-color: darken(@social-lighten-item-background-color, 20%);
 ```
 
 ## Разметка
