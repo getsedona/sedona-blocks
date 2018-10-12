@@ -13,24 +13,19 @@
 ## Настройка
 
 ```less
-// Base
+// Item
 
 @slider-item-background-color: transparent;
+@slider-item-background-image: none;
 @slider-item-background-repeat: no-repeat;
 @slider-item-background-position: 50%;
 @slider-item-background-size: cover;
 
+// Bullet
+
 @slider-bullet-width: 7px;
 @slider-bullet-height: 7px;
 @slider-bullet-radius: 50%;
-
-// Darken
-
-@slider-item-darken-color: @light-primary;
-
-// Lighten
-
-@slider-item-lighten-color: @dark-primary;
 ```
 
 ## Разметка

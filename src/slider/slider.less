@@ -1,24 +1,19 @@
 // Settings
 //------------------------------------------------------------------------------
 
-// Base
+// Item
 
 @slider-item-background-color: transparent;
+@slider-item-background-image: none;
 @slider-item-background-repeat: no-repeat;
 @slider-item-background-position: 50%;
 @slider-item-background-size: cover;
 
+// Bullet
+
 @slider-bullet-width: 7px;
 @slider-bullet-height: 7px;
 @slider-bullet-radius: 50%;
-
-// Darken
-
-@slider-item-darken-color: @light-primary;
-
-// Lighten
-
-@slider-item-lighten-color: @dark-primary;
 
 
 // Slider
@@ -26,13 +21,13 @@
 
 .slider {
 	&--darken {
-		color: @slider-item-darken-color;
-		fill: @slider-item-darken-color;
+		color: @light-primary;
+		fill: @light-primary;
 	}
 
 	&--lighten  {
-		color: @slider-item-lighten-color;
-		fill: @slider-item-lighten-color;
+		color: @dark-primary;
+		fill: @dark-primary;
 	}
 
 	&--scene {
@@ -47,18 +42,19 @@
 .slider__item {
 	height: auto;
 	background-color: @slider-item-background-color;
+	background-image: @slider-item-background-image;
 	background-repeat: @slider-item-background-repeat;
 	background-position: @slider-item-background-position;
 	background-size: @slider-item-background-size;
 
 	&--darken {
-		color: @slider-item-darken-color;
-		fill: @slider-item-darken-color;
+		color: @light-primary;
+		fill: @light-primary;
 	}
 
 	&--lighten {
-		color: @slider-item-lighten-color;
-		fill: @slider-item-lighten-color;
+		color: @dark-primary;
+		fill: @dark-primary;
 	}
 
 	.slider--scene & {
@@ -115,11 +111,11 @@
 	transition-property: background-color, left, transform, opacity;
 
 	.slider--darken .slider__pagination--inside & {
-		background-color: @slider-item-darken-color;
+		background-color: @light-primary;
 	}
 
 	.slider--lighten .slider__pagination--inside & {
-		background-color: @slider-item-lighten-color;
+		background-color: @dark-primary;
 	}
 
 	&--active-main {
@@ -139,7 +135,7 @@
 		opacity: 0.3;
 	}
 
-	&:hover {
+	body:not(.mobile) &:hover {
 		opacity: 0.75;
 	}
 
