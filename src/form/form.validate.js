@@ -4,12 +4,12 @@
 window.sedona.form = {
 	validate: function() {
 		if (document.querySelector('form[novalidate]') !== null) {
-			let form = document.querySelectorAll('form[novalidate]');
+			const form = document.querySelectorAll('form[novalidate]');
 
 			Array.prototype.forEach.call(form, function(el) {
 				el.addEventListener('submit', function(evt) {
 					if (el.querySelector('[required]') !== null) {
-						let required = el.querySelectorAll('[required]');
+						const required = el.querySelectorAll('[required]');
 
 						Array.prototype.forEach.call(required, function(el) {
 							sedonaFormValidateRequired(el);
@@ -17,7 +17,7 @@ window.sedona.form = {
 					}
 
 					if (el.querySelector('[minlength]') !== null) {
-						let minlength = el.querySelectorAll('[minlength]');
+						const minlength = el.querySelectorAll('[minlength]');
 
 						Array.prototype.forEach.call(minlength, function(el) {
 							sedonaFormValidateMinLength(el);
@@ -25,7 +25,7 @@ window.sedona.form = {
 					}
 
 					if (el.querySelector('[type="email"]') !== null) {
-						let email = el.querySelectorAll('[type="email"]');
+						const email = el.querySelectorAll('[type="email"]');
 
 						Array.prototype.forEach.call(email, function(el) {
 							sedonaFormValidateEmail(el);
@@ -44,7 +44,7 @@ window.sedona.form = {
 		}
 
 		if (document.querySelector('form[novalidate] [minlength]') !== null) {
-			let minlength = document.querySelectorAll('form[novalidate] [minlength]');
+			const minlength = document.querySelectorAll('form[novalidate] [minlength]');
 
 			Array.prototype.forEach.call(minlength, function(el) {
 				el.addEventListener('input', function() {
@@ -58,7 +58,7 @@ window.sedona.form = {
 		}
 
 		if (document.querySelector('form[novalidate] [type="email"]') !== null) {
-			let email = document.querySelectorAll('form[novalidate] [type="email"]');
+			const email = document.querySelectorAll('form[novalidate] [type="email"]');
 
 			Array.prototype.forEach.call(email, function(el) {
 				el.addEventListener('input', function() {
