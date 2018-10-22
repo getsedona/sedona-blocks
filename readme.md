@@ -31,10 +31,9 @@
 
 Могут использоваться как самостоятельные блоки, так и вкладываться в другие, но не сами в себя.
 
-* carousel
+* [carousel](https://github.com/constlab/sedona-blocks/tree/master/src/carousel) ([пример](http://sedona.stage.constlab.ru/blocks/carousel/))
 * collapse
 * [grid](https://github.com/constlab/sedona-blocks/tree/master/src/grid) ([пример](http://sedona.stage.constlab.ru/blocks/grid/))
-* [slider](https://github.com/constlab/sedona-blocks/tree/master/src/slider) ([пример](http://sedona.stage.constlab.ru/blocks/slider/))
 * tabs
 
 ### Инлайновые
@@ -68,8 +67,8 @@ main: [
   'node_modules/sedona-blocks/src/footer/footer.less',
   'node_modules/sedona-blocks/src/header/header.less',
   'node_modules/sedona-blocks/src/notify/notify.less',
+  'node_modules/sedona-blocks/src/carousel/carousel.less',
   'node_modules/sedona-blocks/src/grid/grid.less',
-  'node_modules/sedona-blocks/src/slider/slider.less',
   'node_modules/sedona-blocks/src/card/card.less',
   'node_modules/sedona-blocks/src/form/form.less',
   'node_modules/sedona-blocks/src/file/file.less',
@@ -83,7 +82,7 @@ main: [
 app: [
   'node_modules/sedona-blocks/src/global/global.js',
   'node_modules/sedona-blocks/src/header/header.js',
-  'node_modules/sedona-blocks/src/slider/slider.js',
+  'node_modules/sedona-blocks/src/carousel/carousel.js',
   'node_modules/sedona-blocks/src/form/form.validate.js',
   'node_modules/sedona-blocks/src/file/file.js',
   'node_modules/sedona-blocks/src/range/range.js',
