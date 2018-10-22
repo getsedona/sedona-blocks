@@ -1,6 +1,17 @@
 // Notify
 //------------------------------------------------------------------------------
 
-document.querySelector('.js-notify-close').addEventListener('click', function() {
-	document.querySelector('.notify').classList.add('notify--hide');
-});
+window.sedona.notify = function() {
+	if (document.querySelector('.notify') === null) {
+		return;
+	}
+
+	const element = document.querySelector('.notify');
+
+	element.querySelector('.js-notify-close').addEventListener('click', function() {
+		element.classList.remove('notify--show');
+		element.classList.add('notify--hide');
+	});
+}
+
+sedona.notify();
