@@ -163,10 +163,11 @@
 				white-space: normal !important;
 				display: block;
 				border-bottom-width: 0;
-				padding-top: 0;
+				padding-top: (@indent / 2);
+				padding-bottom: (@indent / 2);
 
-				&:first-child {
-					padding-top: @indent;
+				&:empty {
+					display: none;
 				}
 
 				&:before {
@@ -235,6 +236,8 @@
 				@media (max-width: (@grid-breakpoints-sm - 1px)) {
 					display: block;
 					border-bottom: 1px solid @table-divider;
+					padding-top: (@indent / 2);
+					padding-bottom: (@indent / 2);
 
 					&:first-child {
 						border-top: 1px solid @table-divider;
