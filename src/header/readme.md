@@ -14,7 +14,7 @@
 @header-height: (@line-height + @indent * 2);
 
 @header-color: @base-primary;
-@header-link-color: @link-primary;
+@header-link-color: inherit;
 
 @header-background-color: transparent;
 @header-background-image: none;
