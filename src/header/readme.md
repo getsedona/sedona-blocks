@@ -6,15 +6,18 @@
 
 * Подключается к `<header>` или располагается внутри него
 * По-умолчанию имеет максимальную для контента ширину — `@header-max-width`
-* По-умолчанию имеет мобильный вид. Разворачивается, начиная с ширины `@header-breakpoints-desktop`
+* Если ширина экрана меньше `@header-breakpoints-desktop`, принимает мобильный вид
 
 ## Настройка
 
 ```less
-@header-height: (@line-height + @indent * 2);
+// Base
 
-@header-color: @base-primary;
+@header-height: (@line-height + @indent * 4);
+
+@header-color: inherit;
 @header-link-color: inherit;
+@header-link-border-width: @link-border-width;
 
 @header-background-color: transparent;
 @header-background-image: none;
@@ -25,68 +28,22 @@
 @header-breakpoints: @grid-breakpoints-md;
 @header-max-width: @grid-breakpoints-xl;
 @header-gutter: @indent;
-```
 
-## Разметка
+// Collapse mobile
 
-```html
-<header class="header">
-  <div class="header__wrap">
-    <div class="header__fold">
-      <div class="header__logo">
-        <a href="#">Sedona</a>
-      </div>
+@header-collapse-color: @header-color;
+@header-collapse-link-color: inherit;
 
-      <ul class="header__mobile">
-        <!-- Дополнительно (примеры) -->
-        <li>Привет!</li>
-        <li><a href="#">Вход</a></li>
-        <li><a href="#">8 800 200-66-00</a></li>
-        <li><a href="#">Поиск</a></li>
-        <!-- / -->
-  
-        <li class="header__toggle"><button class="js-header-toggle">Меню</button></li>
-      </ul>
-    </div>
-
-    <div class="header__collapse">
-      <nav class="header__menu">
-        <ul>
-          <li><a href="#">Компания</a></li>
-          <li><a href="#">Продукция</a></li>
-          <li><a href="#">Услуги и цены</a></li>
-          <li><a href="#">Контакты</a></li>
-        </ul>
-      </nav>
-      
-      <!-- Дополнительно -->
-      <ul class="header__extra">
-        <li><a href="#">Вход</a></li>
-        <li><a class="btn" href="#">Выход</a></li>
-      </ul>
-      <!-- / -->
-      
-      <!-- Дополнительно -->
-      <ul class="header__extra  header__extra--nowrap">
-        <li><a href="#">EN</a></li>
-        <li><a href="#">FR</a></li>
-      </ul>
-      <!-- / -->
-      
-      <!-- Дополнительно -->
-      <ul class="header__extra  header__extra--hidden-mobile">
-        <li><a href="#">8 800 200-66-00</a></li>
-        <li><a href="#">Поиск</a></li>
-      </ul>
-      <!-- / -->
-    </div>
-  </div>
-</header>
+@header-collapse-background-color: @header-background-color;
+@header-collapse-background-image: @header-background-image;
+@header-collapse-background-repeat: @header-background-repeat;
+@header-collapse-background-position: @header-background-position;
+@header-collapse-background-size: @header-background-size;
 ```
 
 ## Модификаторы
 
-### `header__extra`
+### `header__nav`
 
-* `header__extra--nowrap` — запрещает перенос внутренних элементов на новые строки
-* `header__extra--hidden-mobile` — скрывает элементы, когда шапка становися мобильной
+* `header__nav--hidden-mobile` — скрывает элемент, когда шапка становися мобильной
+* `header__nav--visible-mobile` — показывает элемент, когда шапка не является мобильной
