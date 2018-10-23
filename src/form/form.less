@@ -211,7 +211,7 @@
 		}
 
 		@media (min-width: @form-breakpoints) {
-			padding-right: (@grid-gutter / 2);
+			padding-right: @indent;
 			margin-top: @form-control-padding-top;
 			margin-bottom: 0;
 		}
@@ -236,14 +236,14 @@
 	flex-wrap: wrap;
 	align-items: center;
 	margin-bottom: (@indent / -2);
-	margin-right: (@grid-gutter / -4);
+	margin-right: (@indent / -2);
 
 	& ~ & {
 		margin-top: @indent;
 	}
 
 	& > * {
-		padding-right: (@grid-gutter / 4);
+		padding-right: (@indent / 2);
 		margin-bottom: (@indent / 2);
 	}
 }
@@ -616,7 +616,7 @@
 	input + span {
 		display: block;
 		position: relative;
-		padding-left: (@font-size * 1.375 + @grid-gutter / 4);
+		padding-left: (@font-size * 1.375 + @indent / 2);
 
 		&::before,
 		&::after {
@@ -1153,7 +1153,7 @@
 
 .form__after {
 	order: 1;
-	right: (@grid-gutter / 4);
+	right: (@indent / 2);
 
 	& ~ input {
 		padding-right: (@form-control-height - @form-control-border-width);
