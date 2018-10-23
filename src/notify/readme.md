@@ -10,7 +10,7 @@
 
 ```less
 @notify-color: inherit;
-@notify-link-color: @link-primary;
+@notify-link-color: inherit;
 
 @notify-background-color: @base-divider;
 @notify-background-image: none;

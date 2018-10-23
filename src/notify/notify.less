@@ -2,7 +2,7 @@
 //------------------------------------------------------------------------------
 
 @notify-color: inherit;
-@notify-link-color: @link-primary;
+@notify-link-color: inherit;
 
 @notify-background-color: @base-divider;
 @notify-background-image: none;
@@ -88,8 +88,8 @@
 }
 
 .notify__content {
-	padding-left: (@grid-gutter / 2);
-	padding-right: (@grid-gutter / 2);
+	padding-left: @indent;
+	padding-right: @indent;
 }
 
 @keyframes notifyShow {
