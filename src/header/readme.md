@@ -4,7 +4,7 @@
 
 ## Особенности
 
-* Подключается к `<header>` или располагается внутри него
+* Подключается к `<header>`
 * По-умолчанию имеет максимальную для контента ширину — `@header-max-width`
 * Если ширина экрана меньше `@header-breakpoints-desktop`, принимает мобильный вид
 
@@ -13,7 +13,10 @@
 ```less
 // Base
 
-@header-height: (@line-height + @indent * 4);
+@header-padding-top-smaller: (@indent-element-smaller / 2);
+@header-padding-top-larger: (@indent-element-larger / 2);
+@header-padding-bottom-smaller: @header-padding-top-smaller;
+@header-padding-bottom-larger: @header-padding-top-larger;
 
 @header-color: inherit;
 @header-link-color: inherit;
@@ -29,6 +32,17 @@
 @header-max-width: @grid-breakpoints-xl;
 @header-gutter: @indent;
 
+// Scrollable
+
+@header-scrollable-color: @header-color;
+@header-scrollable-link-color:inherit;
+
+@header-scrollable-background-color: @header-background-color;
+@header-scrollable-background-image: @header-background-image;
+@header-scrollable-background-repeat: @header-background-repeat;
+@header-scrollable-background-position: @header-background-position;
+@header-scrollable-background-size: @header-background-size;
+
 // Collapse mobile
 
 @header-collapse-color: @header-color;
@@ -42,6 +56,10 @@
 ```
 
 ## Модификаторы
+
+### `header`
+
+* `header--fixed` — фиксирует шапку
 
 ### `header__nav`
 
