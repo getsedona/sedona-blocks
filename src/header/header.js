@@ -18,13 +18,13 @@ window.sedona.header = function() {
 			if (header.classList.contains('header--fixed')) {
 				let scrTop = window.pageYOffset;
 
-				main.style.top = -scrTop + 'px';
-				main.style.position = 'fixed';
-				main.style.overflow = 'hidden';
-
 				footer.style.top = footer.offsetTop - scrTop + 'px';
 				footer.style.position = 'fixed';
 				footer.style.overflow = 'hidden';
+
+				main.style.top = -scrTop + 'px';
+				main.style.position = 'fixed';
+				main.style.overflow = 'hidden';
 
 				window.scrollTo(0, 0);
 			}
@@ -40,13 +40,13 @@ window.sedona.header = function() {
 
 				let scrTop = parseFloat(main.style.top) * -1;
 
-				main.style.top = '';
-				main.style.position = '';
-				main.style.overflow = '';
-
 				footer.style.top = '';
 				footer.style.position = '';
 				footer.style.overflow = '';
+
+				main.style.top = '';
+				main.style.position = '';
+				main.style.overflow = '';
 
 				window.scrollTo(0, scrTop);
 			}, 200);

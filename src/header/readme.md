@@ -18,6 +18,8 @@
 @header-padding-bottom-smaller: @header-padding-top-smaller;
 @header-padding-bottom-larger: @header-padding-top-larger;
 
+@header-font-family: inherit;
+
 @header-color: inherit;
 @header-link-color: inherit;
 @header-link-border-width: @link-border-width;
@@ -28,6 +30,8 @@
 @header-background-position: 0 0;
 @header-background-size: auto auto;
 
+@header-box-shadow: @box-shadow;
+
 @header-breakpoints: @grid-breakpoints-md;
 @header-max-width: @grid-breakpoints-xl;
 @header-gutter: @indent;
@@ -35,13 +39,15 @@
 // Scrollable
 
 @header-scrollable-color: @header-color;
-@header-scrollable-link-color:inherit;
+@header-scrollable-link-color: inherit;
 
 @header-scrollable-background-color: @header-background-color;
 @header-scrollable-background-image: @header-background-image;
 @header-scrollable-background-repeat: @header-background-repeat;
 @header-scrollable-background-position: @header-background-position;
 @header-scrollable-background-size: @header-background-size;
+
+@header-scrollable-box-shadow: @header-box-shadow;
 
 // Collapse mobile
 

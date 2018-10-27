@@ -8,6 +8,8 @@
 @header-padding-bottom-smaller: @header-padding-top-smaller;
 @header-padding-bottom-larger: @header-padding-top-larger;
 
+@header-font-family: inherit;
+
 @header-color: inherit;
 @header-link-color: inherit;
 @header-link-border-width: @link-border-width;
@@ -17,6 +19,8 @@
 @header-background-repeat: repeat;
 @header-background-position: 0 0;
 @header-background-size: auto auto;
+
+@header-box-shadow: @box-shadow;
 
 @header-breakpoints: @grid-breakpoints-md;
 @header-max-width: @grid-breakpoints-xl;
@@ -32,6 +36,8 @@
 @header-scrollable-background-repeat: @header-background-repeat;
 @header-scrollable-background-position: @header-background-position;
 @header-scrollable-background-size: @header-background-size;
+
+@header-scrollable-box-shadow: @header-box-shadow;
 
 // Collapse mobile
 
@@ -51,6 +57,7 @@
 .header {
 	position: relative;
 	z-index: 100;
+	font-family: @header-font-family;
 	color: @header-color;
 	fill: @header-color;
 
@@ -62,8 +69,9 @@
 		background-repeat: @header-background-repeat;
 		background-position: @header-background-position;
 		background-size: @header-background-size;
+		box-shadow: @header-box-shadow;
 		transition: @duration @timing-function;
-		transition-property: background-color;
+		transition-property: background-color, box-shadow;
 	}
 
 	&--fixed {
@@ -105,6 +113,7 @@
 			background-repeat: @header-scrollable-background-repeat;
 			background-position: @header-scrollable-background-position;
 			background-size: @header-scrollable-background-size;
+			box-shadow: @header-scrollable-box-shadow;
 		}
 	}
 
@@ -131,12 +140,11 @@
 }
 
 .header__fold {
-	min-width: 320px;
 	display: flex;
 	align-items: center;
 	height: (@header-padding-top-smaller + @line-height + @header-padding-bottom-smaller);
 	transition: @duration @timing-function;
-	transition-property: background-color, height;
+	transition-property: background-color, box-shadow, height;
 
 	@media (min-width: @grid-breakpoints-sm) {
 		padding-right: (@grid-gutter / 2);
@@ -153,12 +161,15 @@
 	}
 
 	@media (max-width: (@header-breakpoints - 1px)) {
+		width: 100% !important;
+		min-width: 320px;
 		z-index: 2;
 		background-color: @header-background-color;
 		background-image: @header-background-image;
 		background-repeat: @header-background-repeat;
 		background-position: @header-background-position;
 		background-size: @header-background-size;
+		box-shadow: @header-box-shadow;
 
 		.header--fixed & {
 			position: fixed;
@@ -178,6 +189,7 @@
 			background-repeat: @header-scrollable-background-repeat;
 			background-position: @header-scrollable-background-position;
 			background-size: @header-scrollable-background-size;
+			box-shadow: @header-scrollable-box-shadow;
 		}
 	}
 }
@@ -251,7 +263,7 @@
 	padding-top: @header-padding-top-smaller;
 	padding-bottom: @header-padding-bottom-smaller;
 	transition: @duration @timing-function;
-	transition-property: height;
+	transition-property: box-shadow, height;
 
 	@media (min-width: @grid-breakpoints-sm) {
 		padding-right: (@grid-gutter / 2);
@@ -278,6 +290,7 @@
 		background-repeat: @header-collapse-background-repeat;
 		background-position: @header-collapse-background-position;
 		background-size: @header-collapse-background-size;
+		box-shadow: @header-box-shadow;
 		display: none;
 		visibility: hidden;
 		transform: translate3d(0, -@indent, 0);
