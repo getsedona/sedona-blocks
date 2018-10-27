@@ -22,7 +22,6 @@
 
 @header-color: inherit;
 @header-link-color: inherit;
-@header-link-border-width: @link-border-width;
 
 @header-background-color: transparent;
 @header-background-image: none;
