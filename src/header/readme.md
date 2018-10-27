@@ -30,7 +30,7 @@
 @header-background-position: 0 0;
 @header-background-size: auto auto;
 
-@header-box-shadow: @box-shadow;
+@header-box-shadow: none;
 
 @header-breakpoints: @grid-breakpoints-md;
 @header-max-width: @grid-breakpoints-xl;
@@ -47,7 +47,7 @@
 @header-scrollable-background-position: @header-background-position;
 @header-scrollable-background-size: @header-background-size;
 
-@header-scrollable-box-shadow: @header-box-shadow;
+@header-scrollable-box-shadow: none;
 
 // Collapse mobile
 
