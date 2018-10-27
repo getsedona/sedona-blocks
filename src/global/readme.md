@@ -11,6 +11,7 @@
 
 @rhythm: 4px;
 @radius: @rhythm; // 4px
+@box-shadow: none;
 
 // Indents
 
