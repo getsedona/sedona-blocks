@@ -18,6 +18,8 @@
 @header-padding-bottom-smaller: @header-padding-top-smaller;
 @header-padding-bottom-larger: @header-padding-top-larger;
 
+@header-font-size: inherit;
+@header-line-height: inherit;
 @header-font-family: inherit;
 
 @header-color: inherit;

@@ -2,11 +2,28 @@
 //------------------------------------------------------------------------------
 
 window.sedona.header = function() {
-	if (document.querySelector('.header') === null) {
+	if (!document.querySelector('.header')) {
 		return;
 	}
 
 	const header = document.querySelector('.header');
+
+	window.onscroll = function() {
+		if (!header.classList.contains('header--fixed')) {
+			return;
+		}
+
+		if (this.pageYOffset > 0) {
+			header.classList.add('header--scrollable');
+		} else {
+			header.classList.remove('header--scrollable');
+		}
+	};
+
+	if (!header.querySelector('.js-header-toggle')) {
+		return;
+	}
+
 	const headerCollapse = header.querySelector('.header__collapse');
 	const main = document.querySelector('.main');
 	const footer = document.querySelector('.footer');
@@ -18,9 +35,11 @@ window.sedona.header = function() {
 			if (header.classList.contains('header--fixed')) {
 				let scrTop = window.pageYOffset;
 
-				footer.style.top = footer.offsetTop - scrTop + 'px';
-				footer.style.position = 'fixed';
-				footer.style.overflow = 'hidden';
+				if (footer) {
+					footer.style.top = footer.offsetTop - scrTop + 'px';
+					footer.style.position = 'fixed';
+					footer.style.overflow = 'hidden';
+				}
 
 				main.style.top = -scrTop + 'px';
 				main.style.position = 'fixed';
@@ -40,9 +59,11 @@ window.sedona.header = function() {
 
 				let scrTop = parseFloat(main.style.top) * -1;
 
-				footer.style.top = '';
-				footer.style.position = '';
-				footer.style.overflow = '';
+				if (footer) {
+					footer.style.top = '';
+					footer.style.position = '';
+					footer.style.overflow = '';
+				}
 
 				main.style.top = '';
 				main.style.position = '';
@@ -52,18 +73,6 @@ window.sedona.header = function() {
 			}, 200);
 		}
 	});
-
-	window.onscroll = function() {
-		if (!header.classList.contains('header--fixed')) {
-			return;
-		}
-
-		if (this.pageYOffset > 0) {
-			header.classList.add('header--scrollable');
-		} else {
-			header.classList.remove('header--scrollable');
-		}
-	};
 }
 
 sedona.header();
