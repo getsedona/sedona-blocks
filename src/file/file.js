@@ -2,7 +2,7 @@
 //------------------------------------------------------------------------------
 
 window.sedona.file = function() {
-	if (document.querySelector('.file[type="file"]') === null) {
+	if (!document.querySelector('.file[type="file"]')) {
 		return;
 	}
 

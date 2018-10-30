@@ -3,12 +3,12 @@
 
 window.sedona.form = {
 	validate: function() {
-		if (document.querySelector('form[novalidate]') !== null) {
+		if (document.querySelector('form[novalidate]')) {
 			const form = document.querySelectorAll('form[novalidate]');
 
 			Array.prototype.forEach.call(form, function(el) {
 				el.addEventListener('submit', function(evt) {
-					if (el.querySelector('[required]') !== null) {
+					if (el.querySelector('[required]')) {
 						const required = el.querySelectorAll('[required]');
 
 						Array.prototype.forEach.call(required, function(el) {
@@ -16,7 +16,7 @@ window.sedona.form = {
 						});
 					}
 
-					if (el.querySelector('[minlength]') !== null) {
+					if (el.querySelector('[minlength]')) {
 						const minlength = el.querySelectorAll('[minlength]');
 
 						Array.prototype.forEach.call(minlength, function(el) {
@@ -24,7 +24,7 @@ window.sedona.form = {
 						});
 					}
 
-					if (el.querySelector('[type="email"]') !== null) {
+					if (el.querySelector('[type="email"]')) {
 						const email = el.querySelectorAll('[type="email"]');
 
 						Array.prototype.forEach.call(email, function(el) {
@@ -32,7 +32,7 @@ window.sedona.form = {
 						});
 					}
 
-					if (el.querySelector('.form__control--danger') !== null) {
+					if (el.querySelector('.form__control--danger')) {
 						evt.preventDefault();
 
 						el.querySelector('.form__control--danger:first-child input').scrollIntoView();
@@ -43,7 +43,7 @@ window.sedona.form = {
 			});
 		}
 
-		if (document.querySelector('form[novalidate] [minlength]') !== null) {
+		if (document.querySelector('form[novalidate] [minlength]')) {
 			const minlength = document.querySelectorAll('form[novalidate] [minlength]');
 
 			Array.prototype.forEach.call(minlength, function(el) {
@@ -57,7 +57,7 @@ window.sedona.form = {
 			});
 		}
 
-		if (document.querySelector('form[novalidate] [type="email"]') !== null) {
+		if (document.querySelector('form[novalidate] [type="email"]')) {
 			const email = document.querySelectorAll('form[novalidate] [type="email"]');
 
 			Array.prototype.forEach.call(email, function(el) {
@@ -126,7 +126,7 @@ function sedonaFormValidateAddDangerHint(el, message) {
 }
 
 function sedonaFormValidateRemoveDangerHint(el) {
-	if (el.parentElement.nextElementSibling !== null && el.parentElement.nextElementSibling.classList.contains('form__hint--danger')) {
+	if (el.parentElement.nextElementSibling && el.parentElement.nextElementSibling.classList.contains('form__hint--danger')) {
 		el.parentElement.parentElement.removeChild(el.parentElement.nextElementSibling);
 	}
 }

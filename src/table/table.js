@@ -2,7 +2,7 @@
 //------------------------------------------------------------------------------
 
 window.sedona.table = function() {
-	if (document.querySelector('.table .table__wrap') === null) {
+	if (!document.querySelector('.table .table__wrap')) {
 		return;
 	}
 

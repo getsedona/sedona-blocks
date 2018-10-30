@@ -2,7 +2,7 @@
 //------------------------------------------------------------------------------
 
 window.sedona.carousel = function() {
-	if (document.querySelector('.carousel') === null) {
+	if (!document.querySelector('.carousel')) {
 		return;
 	}
 

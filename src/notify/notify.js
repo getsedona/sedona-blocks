@@ -2,7 +2,7 @@
 //------------------------------------------------------------------------------
 
 window.sedona.notify = function() {
-	if (document.querySelector('.notify') === null) {
+	if (!document.querySelector('.notify')) {
 		return;
 	}
 
