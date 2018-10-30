@@ -221,7 +221,8 @@
 .form__fields {
 	.form__group--columns & {
 		@media (min-width: @form-breakpoints) {
-			flex: 1 0 0%;
+			flex-grow: 1;
+			flex-basis: 0;
 		}
 
 		@media (max-width: (@form-breakpoints - 1px)) {
